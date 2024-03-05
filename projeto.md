@@ -82,8 +82,27 @@ A tabela a seguir contém a relação dos Requisitos Funcionais elicitados, com 
 
 | IDENTIFICADOR | NOME | DESCRIÇÃO |
 :---|:---|:---|
-|RF-001 |Nome do Requisito | Descreva aqui as informações sobre o requisito |
-|RF-002 | Nome do Requisito | Descreva aqui as informações sobre o segundo requisito |
+|RF-001 |Cadastrar clientes |O sistema permitirá que os usuários sejam cadastrados com informações pessoais como nome completo, data de nascimento, CPF, email, endereço, 
+telefone para contato e restrições do cliente.|
+|RF-002 | Cadastrar funcionários | O sistema permitirá que os funcionários sejam cadastrados com informações pessoais como nome completo, data de nascimento, CPF, email, endereço, telefone para contato, formação profissional |
+|RF-003 | Cadastrar produtos | O sistema permitirá o cadastramento de produtos como nome, marca, peso, tabela nutricional e quantidade de estoque.|
+|RF-004 | Vender os produtos | O sistema permitirá a venda de produtos como valores, validade, quantidade. |
+|RF-005 | Cadastrar equipamentos |  O sistema permitirá o cadastramento de equipamentos disponíveis na academia como marcas, nomes, pesos e funcionalidades. |
+|RF-007 | Registrar preços | O sistema disponibilizará os preços de produtos, planos e aulas exclusivas. |
+|RF-008 | Avaliar sua I.M.C| O sistema avaliará seu índice de massa corporal com peso, altura e idade.|
+|RF-009 | Atender suas dúvidas | O sistema disponibilizará um atendimento ao público com mensagens automáticas e com profissionais. |
+|RF-010 | Informar horários | O sistema disponibilizará informações sobre horários de aulas e de abertura e fechamento de cada espaço da academia. |
+|RF-011 | Agendar aulas experimentais | O sistema possibilitrá o agendamento de aulas experimentais somente 1 vez de forma gratuita. |
+|RF-012 | Escolher plano | O sistema permitirá que o usuário escolha o plano que dejesa com valores e horários. |
+|RF-013 | Cancelar o pedido | O sistema permitirá que o usuário cancele o pedido do produto. |
+|RF-014 | Comprar aulas | O sistema permitirá que o usuário escolha os dias para ir em aulas específicas, de forma avulsa. |
+|RF-015 | Fichar treinos | O sistema permitirá que o usuário acesse a ficha de treino pelo aplicativo depois de finalizada pelo instrutor, de forma presencial. |
+|RF-016 | Notificar informações atualizadas |O sistema irá permitir que o usuário seja notificado a cada atualização, se permitido pelo usuário. |
+|RF-017 | Cancelar plano | O sistema permitirá que o usuário cancele o plano. |
+|RF-018 | Cadastrar fornecedores | O sistema possibilitará o cadastro de fornecedores como nome da empresa, email, telefone e CNPJ. |
+|RF-019 | Avaliar possíveis parceiros | O sistema possibilitará a avaliação de possíveis parceiros para divulgação e marketing. |
+|RF-020 | Trocar/renovar planos | O sistema possibilitará a troca ou a renovação dos planos para o usuário.|
+
 
 
 ## Requisitos Não Funcionais
