@@ -1,4 +1,12 @@
 import Header from "@/components/header/Header";
+import styles from "./globals.css"
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+	weight: "400",
+	subsets: ["latin"],
+});
+
 
 export const metadata = {
 	title: "ALMS Fit",
@@ -8,11 +16,16 @@ export const metadata = {
 	keywords: " CSS, JavaScript, React. Next.js",
 };
 export default function RootLayout({ children }) {
+	const layoutStyle = {
+		backgroundColor: "#000000",
+	  };
+	
 	return (
+
 		<html lang="pt-BR">
-			<body>
+			<body className={poppins.className}>
 				<Header />
-				<main>{children}</main>
+				<main>{children}</main>	
 			</body>
 		</html>
 	);
