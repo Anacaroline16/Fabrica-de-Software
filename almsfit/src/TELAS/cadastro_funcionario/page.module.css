@@ -1,0 +1,237 @@
+.containerFormulario {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    flex-direction: column;
+}
+
+.conteudoFormulario {
+    background-color: var(--cor-secundaria);
+    width: 50%;
+    padding: 4%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.formulario {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 4%;
+}
+
+.imagemUsuario {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.campoInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputPrimeiroCampo {
+    margin-top: 24px;
+    background-color: var(--cor-inputs);
+    color: white;
+    height: 40px;
+    display: flex;
+
+}
+
+.inputPrimeiroCampoSenha{
+    margin-top: 24px;
+    background-color: var(--cor-inputs);
+    color: white;
+    height: 40px;
+    display: flex;
+}
+
+.inputPrimeiroCampo>label {
+    width: 25%;
+    height: 100%;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    background-color: #74050e3d;
+}
+
+.inputPrimeiroCampo>input{
+    background-color: var(--cor-inputs);
+    border: none;
+    color: white;
+    height: 100%;
+    width: 75%;
+    padding: 1%;
+}
+
+.inputSenha{
+    background-color: var(--cor-inputs);
+    border: none;
+    color: white;
+    height: 100%;
+    width: 100%;
+    padding: 1%;
+}
+
+.containerInputSenha{
+    position: relative; 
+    display: flex;
+    align-items: center;
+    width: 75%;
+}
+
+.inputPrimeiroCampo>input:focus,
+.inputSenha:focus {
+    border: 1px solid #ffffff;
+    outline: none;
+}
+
+.botaoMostrarSenha {
+    color: white;
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.mensagemSenha,
+.mensagemCpf {
+    color: rgba(255, 255, 255, 0.815);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.labelCampoSenha {
+    font-size: 14px;
+    width: 25%;
+    height: 100%;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    background-color: #74050e3d;
+}
+
+.campoDropDownNascimento {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.labelDropDown {
+    display: flex;
+    border-radius: 12px;
+    color: white;
+    align-items: center;
+    padding: 5px 15px;
+    min-width: 150px;
+    justify-content: space-between;
+    background-color: var(--cor-inputs);
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.dropDown {
+    background-color: var(--cor-inputs);
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.containerOpcoesDropDown {
+    background-color: var(--cor-inputs);
+    max-height: 250px;
+    overflow-y: auto;
+    position: absolute;
+    display: flex;
+    border-radius: 12px;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.ulOpcoesDropDown {
+    width: 100%;
+    background-color: var(--cor-inputs);
+    margin: auto;
+    list-style-type: none;
+}
+
+.opcoesDropDown {
+    color: white;
+    margin: 10px 0;
+    padding: 5% 15%;
+    cursor: pointer;
+}
+
+.opcoesDropDown:hover {
+    background-color: #700b14;
+}
+
+.botaoEnviarFormulario{
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    height: 40px;
+    width: 300px;
+    margin: 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.setaBotao{
+    transition: all 0.5s;
+}
+
+.botaoEnviarFormulario:hover{
+    background-color: #ff0000;
+}
+
+.botaoEnviarFormulario:hover > .setaBotao{
+    margin-left: 10px;
+}
+
+.campoSuperior{
+    display: flex;
+    padding: 5px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.linkVoltar{
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (max-width: 768px){
+    .conteudoFormulario{
+        width: 80%;
+    }
+
+    .inputPrimeiroCampo>label {
+        font-size: 12px;
+    }
+
+    .labelCampoSenha {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 415px){
+    .conteudoFormulario{
+        width: 90%;
+    }
+}

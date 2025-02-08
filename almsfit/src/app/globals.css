@@ -5,3 +5,57 @@ body{
   padding: 0;
   border: 0;
 }
+
+:root{
+  font-family: "Poppins", sans-serif;
+  --cor-secundaria: rgba(163, 0, 0, 1);
+  --cor-fundo: #0000;
+  --cor-inputs: #870e18
+}
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+  display: flex;
+  background-color: var(--cor-fundo);
+}
+
+body{
+  background-color: black;
+}
+
+
+
+/*Nota: essa parte reseta os inputs, como retirar os icones do tipo passaword dos inputs no edge e etc..*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  background-color: var(--cor-inputs); 
+  color: white;
+  box-shadow: 0 0 0 30px var(--cor-inputs) inset;
+}
+
+input:-webkit-autofill::first-line {
+  color: white; 
+  font-style: normal;
+  font-weight: normal; 
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+display: none;
+}
