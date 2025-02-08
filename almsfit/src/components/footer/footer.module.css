@@ -1,0 +1,27 @@
+.body{
+  height: 200%;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20.21%;
+  width: 100%;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  background-color: rgba(161, 0, 0, 0.5);
+  height: 30vh;
+  gap: 12%;
+  
+}
+.footer2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(161, 0, 0);
+  height: 6vh;
+}
+.lista1{
+  line-height: 1;
+}
