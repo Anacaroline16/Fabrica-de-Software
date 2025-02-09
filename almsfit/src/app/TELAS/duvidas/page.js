@@ -1,4 +1,5 @@
 import styles from "./duvidas.module.css"
+import Image from "next/image"
 
 export default function Duvidas(){
     return(
@@ -9,6 +10,13 @@ export default function Duvidas(){
 
                     <h3 className={styles.tituloInfo}>Ligue-nos</h3>
                     <p>(69) 9 9999 - 9999</p>
+                    <Image
+                    src="/assets/Frame 8.png"
+                    width="30"
+                    height="30"
+                    alt="logo redes sociais">
+
+                    </Image>
 
                     <h3 className={styles.tituloInfo}>Local</h3>
                     <p>BR-174, Km 3 S/n - Zona Urbana, 
