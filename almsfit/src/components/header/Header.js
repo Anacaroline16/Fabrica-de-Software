@@ -1,7 +1,10 @@
 'use client'
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../../components/header/header.module.css"
+import styles from "../../components/header/header.module.css";
+
+
+
 export default function Header() {
 	return (
 		<div>
