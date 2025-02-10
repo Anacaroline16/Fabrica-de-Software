@@ -3,7 +3,7 @@ import React from "react";
 /*import Link from "next/link";*/
 import Image from "next/image";
 import styles from "./contato.module.css";
-import styles from "./globals.css";
+//import styles from "./globals.css";
 
 export default function Contato() {  
   return (

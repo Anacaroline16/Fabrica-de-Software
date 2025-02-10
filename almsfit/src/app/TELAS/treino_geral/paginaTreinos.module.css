@@ -1,0 +1,64 @@
+.container{
+    background: radial-gradient(circle at bottom left, #b0000042 0.25%, #000000 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 1% 0;
+}
+
+.cardTreino{
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.30);
+    width: 27%;
+    min-width: 300px;
+    margin: 3%;
+    border-radius: 10px;
+}
+
+.tabelaTreinos{
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgba(163, 0, 0, 1);
+    font-size: 14px;
+}
+
+.containerTreinos{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cabecalho {
+    background-color: rgba(255, 255, 255, 0.40);
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tabelaTreinos th{
+    border-radius: 5px;
+    color: rgba(163, 0, 0, 1);
+    border: 2px solid rgba(163, 0, 0, 1);
+    margin: 0;
+}
+
+
+.colunaRepeticoes::before {
+    content: "▶ ";
+    color: red; /* Define a cor do marcador */
+    font-size: 0.7em; /* Ajusta o tamanho */
+    margin-bottom: 500px;
+    margin-right: 5px; /* Espaçamento entre o marcador e o texto */
+}
+
+.colunaTipoTreino::before {
+    content: "•"; /* Adiciona um marcador manualmente */
+    color: red; /* Define a cor do marcador */
+    font-size: 1.2em; /* Ajusta o tamanho */
+    margin-right: 5px; /* Espaçamento entre o marcador e o texto */
+}
+
+.nomeUsuario{
+    font-style: italic;
+}
