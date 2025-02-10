@@ -27,7 +27,7 @@ export default function Header() {
 								<Link href="/about">Treinos</Link>
 							</li>
 							<li className={styles.link_itens}>
-								<Link href="/contact">Contato</Link>
+								<Link href="/contato">Contato</Link>
 							</li>
 						</ul>
 						<button className={styles.botaoAluno}>

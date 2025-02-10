@@ -1,0 +1,38 @@
+body {
+  
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .contact {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .contact_h1 {
+    color: #333;
+  }
+  
+  .formulario input,
+  .formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+  }
+  
+  .formulario button {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .formulario button:hover {
+    background: #555;
+  }
+  
