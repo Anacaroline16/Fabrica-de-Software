@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./paginaTreinos.module.css"
+import { Eye, EyeOff, ChevronRight, CornerUpLeft } from "lucide-react";
 
 const usuarioNome = 'Julia Martins Rodrigues'
 const dadosTreino = [
@@ -164,11 +165,36 @@ const dadosTreino = [
 ]
 
 export default function TreinoSemana() {
-
+    const [showmodal, setShowModal] = useState(false)
     return (
         <div className={styles.container}>
-            <h2 className={styles.titutloPaigna}>Treino da semana</h2>
-            <p className={styles.nomeUsuario}>{usuarioNome}</p>
+            <div className={styles.consteudocontainer}>
+                <div className={styles.conteudoCentro}>
+                    <h2 className={styles.titutloPaigna}>Treino da semana</h2>
+                    <p className={styles.nomeUsuario}>{usuarioNome}</p>
+                </div>
+                <button className={styles.botaoModal} onClick={() => setShowModal(!showmodal)}>*Alteração apenas funcionários</button>
+                {showmodal && (
+                    <div className={styles.modal}>
+                        <div className={styles.containerModal}>
+                            <button onClick={() => setShowModal(!showmodal)} className={styles.botaoFechar}><CornerUpLeft/></button>
+                            <p>
+                                VOCÊ PRECISA SER UM FUNCIONÁRIO AUTORIZADO PARA REALIZAR UMA ALTERAÇÃO. POR FAVOR INSIRA SUAS CREDENCIAIS.
+                            </p>
+                            <form>
+                                <div className={styles.containerInputs}>
+                                    <input type="email" placeholder="Email:" />
+                                    <input type="password" placeholder="Senha:" />
+                                </div>
+                                <button type="submit" className={styles.botaoenviar}>Acessar <ChevronRight /></button>
+                            </form>
+                        </div>
+                    </div>
+                )
+
+                }
+            </div>
+
             <div className={styles.containerTreinos}>
                 {dadosTreino.map((treino) => (
                     <div key={treino.id} className={styles.cardTreino}>
