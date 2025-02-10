@@ -1,0 +1,28 @@
+.containerPrincipal{
+    text-align: center;
+    margin-top: 2%;
+}
+.tituloInfo, .info2{
+    font-weight: 900;
+    font-size: x-large;
+}
+.subContainer{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+}
+.info1{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1%;
+    border-radius: 10px;
+    width: 23%;
+    height: 50vh;
+}
+.info2{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1%;
+    border-radius: 10px;
+    width: 23%;
+    height: 50vh;
+}
