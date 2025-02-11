@@ -29,7 +29,7 @@ export default function Duvidas(){
                     
                     <p>BR-174, Km 3 S/n - Zona Urbana,<br/> 
                     Vilhena - RO, 76980-000</p>
-                    <Link href="/" className={styles.mapa}>• Ver no google maps</Link>
+                    <Link href="/" className={styles.mapa}>• Ver no Google Maps</Link>
                     
 
                     <h3  className={styles.tituloInfo3}>Horários</h3>
