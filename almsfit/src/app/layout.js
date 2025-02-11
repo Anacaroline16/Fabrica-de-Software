@@ -1,6 +1,6 @@
 import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
-import styles from "./globals.css";
+import Footer from "@/components/footer/Footer"
+import styles from "./globals.css"
 import { Poppins } from "next/font/google";
 
 
@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
 
 		<html lang="pt-BR">
 			<body className={poppins.className}>
+				<Header />
 				<main>{children}</main>	
+        		<Footer/>
 			</body>
 		</html>
 	);
