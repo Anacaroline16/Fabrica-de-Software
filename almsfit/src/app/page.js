@@ -13,12 +13,12 @@ export default function Home() {
                         </h1>
                         <p className={styles.paragrafo_principal}>Melhore sua saúde com a academia: fortaleça seu corpo, reduza o estresse e viva de forma mais equilibrada e feliz.</p>
                         <button className={styles.botao_pmrBloco} type="submit" >  
-                                {/* <Image src="img/figura_botao.png" alt="INSCREVA-SE AGORA" /> */}
-                                {/* INSCREVA-SE AGORA */}
+                                <Image src="/images/figura_botao_1.png" alt="INSCREVA-SE AGORA" width="50" height="50"/> 
+                                 INSCREVA-SE AGORA
                         </button>  
                     </div> 
                     <div className={styles.pmrBloco_coluna2}>
-                        {/* <Image id="img-ft-principal-coluna2" src="img/img1.png" alt="Mulher malhando na academia" width={50} height={50} /> */}
+                         <Image className={styles.img_ft_principal_coluna2} src="/images/img1.png" alt="Mulher malhando na academia" width="250" height="250" /> 
                     </div> 
                 </div>
                 <div className={styles.segundo_bloco}>
