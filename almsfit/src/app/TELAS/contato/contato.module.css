@@ -1,6 +1,8 @@
 .container {
     text-align: center;
     padding: 20px;
+    justify-content: left;
+    display: flex;
   }
   
   .contact {
@@ -33,10 +35,13 @@
     color: white;
     font-weight: bold;
     font-style: inherit;
-    padding: 5px 36px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 38px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+
   }
   
   .formulario button:hover {
@@ -46,13 +51,31 @@
 
 .quadradoRed{
   display: flex;
-  
+  position: absolute;
+  right: 20px;
+  padding-bottom: 20px;
+  margin-right: 80px;
 }
 
 .quadradoWhite{
   display: flex;
+  position: relative;
+  left: 20px;
+  margin-top: 50px;
 }
 
 .ImgMapa{
   display: flex;
+  position: absolute;
+  right: 10px;
+  padding-top: 20px;
+  margin-right: 80px;
+}
+
+.TodasAsImgs{
+  display: flex;
+  justify-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 80px;
 }

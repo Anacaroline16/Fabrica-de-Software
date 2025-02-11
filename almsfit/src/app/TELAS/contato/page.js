@@ -26,28 +26,26 @@ export default function Contato() {
           </form>
         </div>
 
-        
-          <Image src="/images/Rectangle 91.png" alt="quadrado vermelho" 
-            width={400}
-            height={400}
+        <div className={styles.TodasAsImgs}>
+        <Image src="/images/Rectangle 91.png" alt="quadrado vermelho" 
+            width={380}
+            height={380}
             className={styles.quadradoRed}/>
 
         <Link
 						href="https://www.google.com/maps/d/u/0/edit?mid=1ADwq4SUaCVgrfH6Q__1TxsjlTXh2vOQ&usp=sharing"
-						target="_blank"
-						className={styles.linkImg}>
-        <Image src="/images/Screenshot 2024-09-27 155751.png" alt="mapa" className={styles.ImgMapa}
-        width={370}
-        height={370}/>       
-
-				</Link>
+						target="_blank">
+            <Image src="/images/Screenshot 2024-09-27 155751.png" alt="mapa" className={styles.ImgMapa}
+            width={370}
+            height={370}/></Link>
 
         <Image src="/images/Rectangle 91 (2).png" 
           alt="quadrado branco" 
           width={340}
           height={340}
           className={styles.quadradoWhite}/>
-
+        </div>
+          
       </main>
   );
 };
