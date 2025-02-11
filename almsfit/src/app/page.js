@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
+<<<<<<< HEAD
 		<div className={fundo_home}>
             <div className={fundo_home_container}>
                 <div className={primeiro_bloco}>
@@ -47,4 +48,11 @@ export default function Home() {
             </div>
         </div>
 	)
+=======
+		<div>
+			<p>Tela inicial</p>
+			
+		</div>
+	);
+>>>>>>> 605ed763dcf02e5750e2484bc0e085c22d6b48b2
 }

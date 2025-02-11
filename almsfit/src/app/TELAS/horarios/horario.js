@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../../components/Header/header.module.css";
-import styles from "../footer/footer.module.css";
 import "./horarios.module.css";
 
 export default function Horário() {
