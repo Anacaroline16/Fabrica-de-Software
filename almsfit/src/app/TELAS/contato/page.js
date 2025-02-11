@@ -2,17 +2,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./contato.module.css";
-// import styles from "./globals.css";
-// import Contato from "./TELAS/contato";
 
-<Contato/>
 export default function Contato() {  
   return (
 
       <main className={styles.container}>
         <div className={styles.contact}>
           <h1 className={styles.contact_h1}>Contate-nos</h1>
-          <h3 className={styles.contatct_h3}>
+          <h3 className={styles.contact_h3}>
             Você é sempre bem-vindo para entrar em <br />
             contato conosco. Nosso atendimento ao cliente <br />
             está disponível de segunda a sexta, das 9h00 às <br />
@@ -28,19 +25,29 @@ export default function Contato() {
             <button type="submit">Enviar</button>
           </form>
         </div>
+
         
-        {/* <Image>
-          src="./img/Rectangle 91 (1).png" 
-          width="200"
-          height="30"
-          alt="quadrado azul"
-          className={styles.redeSocial}
-        </Image>
-         */}
-        <a href="https://www.google.com/maps/d/u/0/edit?mid=1ADwq4SUaCVgrfH6Q__1TxsjlTXh2vOQ&usp=sharing" target="_blank" rel="noopener noreferrer">
-          <img src="./img/Screenshot 2024-09-27 155751.png" className="retangulo-2Contato" />
-        </a>
-        <img src="./img/Rectangle 91 (2).png" className="retangulo-3Contato" />
+          <Image src="/images/Rectangle 91.png" alt="quadrado vermelho" 
+            width={400}
+            height={400}
+            className={styles.quadradoRed}/>
+
+        <Link
+						href="https://www.google.com/maps/d/u/0/edit?mid=1ADwq4SUaCVgrfH6Q__1TxsjlTXh2vOQ&usp=sharing"
+						target="_blank"
+						className={styles.linkImg}>
+        <Image src="/images/Screenshot 2024-09-27 155751.png" alt="mapa" className={styles.ImgMapa}
+        width={370}
+        height={370}/>       
+
+				</Link>
+
+        <Image src="/images/Rectangle 91 (2).png" 
+          alt="quadrado branco" 
+          width={340}
+          height={340}
+          className={styles.quadradoWhite}/>
+
       </main>
   );
 };

@@ -22,13 +22,13 @@ export default function Header() {
 								<Link href="/">Home</Link>
 							</li>
 							<li className={styles.link_itens}>
-								<Link href="/">Horários</Link>
+								<Link href="/TELAS/horarios">Horários</Link>
 							</li>
 							<li className={styles.link_itens}>
 								<Link href="/">Treinos</Link>
 							</li>
 							<li className={styles.link_itens}>
-								<Link href="/contato">Contato</Link>
+								<Link href="/TELAS/contato">Contato</Link>
 							</li>
 						</ul>
 						<button className={styles.botaoAluno}>

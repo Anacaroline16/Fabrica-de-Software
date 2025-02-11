@@ -14,7 +14,8 @@
   }
 
   .contact_h3{
-    color:black;
+    color:rgb(255, 255, 255);
+    margin-bottom: 10px;
   }
   
   .formulario input,
@@ -24,6 +25,7 @@
     margin: 10px 0;
     border: 1px solid #ccc;
     opacity: 3;
+    margin-top: 15px;
   }
   
   .formulario button {
@@ -41,3 +43,16 @@
     background: #a53a3a;
   }
   
+
+.quadradoRed{
+  display: flex;
+  
+}
+
+.quadradoWhite{
+  display: flex;
+}
+
+.ImgMapa{
+  display: flex;
+}
