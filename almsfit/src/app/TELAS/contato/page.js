@@ -31,9 +31,12 @@ export default function Contato() {
         
         {/* <Image>
           src="./img/Rectangle 91 (1).png" 
-          className="retangulo-1Contato"
-        </Image> */}
-
+          width="200"
+          height="30"
+          alt="quadrado azul"
+          className={styles.redeSocial}
+        </Image>
+         */}
         <a href="https://www.google.com/maps/d/u/0/edit?mid=1ADwq4SUaCVgrfH6Q__1TxsjlTXh2vOQ&usp=sharing" target="_blank" rel="noopener noreferrer">
           <img src="./img/Screenshot 2024-09-27 155751.png" className="retangulo-2Contato" />
         </a>

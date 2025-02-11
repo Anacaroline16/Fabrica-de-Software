@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Link from "next/link";
 import Image from "next/image";
 import "./horarios.module.css";
@@ -22,7 +21,7 @@ export default function Horário() {
           <p className="TituloMaior">Feriados e eventos:</p>
           <p className="subtitulo">06h00 à 12h00</p>
         </div>
-        <Image src="./img/Vector (11).png" className="time" alt="Relógio" />
+        {/* <Image src="./img/Vector (11).png" className="time" alt="Relógio" /> */}
       </main>
     </div>
   );
