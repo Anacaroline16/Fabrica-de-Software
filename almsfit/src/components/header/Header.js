@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../components/header/header.module.css";
 
-
-
 export default function Header() {
 	return (
 		<div>
@@ -27,7 +25,7 @@ export default function Header() {
 								<Link href="/">Horários</Link>
 							</li>
 							<li className={styles.link_itens}>
-								<Link href="/about">Treinos</Link>
+								<Link href="/">Treinos</Link>
 							</li>
 							<li className={styles.link_itens}>
 								<Link href="/contato">Contato</Link>

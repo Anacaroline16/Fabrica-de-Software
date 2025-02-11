@@ -1,13 +1,14 @@
 'use client'
-import React from "react";
-/*import Link from "next/link";*/
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./contato.module.css";
-//import styles from "./globals.css";
+// import styles from "./globals.css";
+import Contato from "./TELAS/contato";
 
+<Contato/>
 export default function Contato() {  
   return (
-    <>
+
       <main className={styles.container}>
         <div className={styles.contact}>
           <h1 className={styles.contact_h1}>Contate-nos</h1>
@@ -38,8 +39,6 @@ export default function Contato() {
         </a>
         <img src="./img/Rectangle 91 (2).png" className="retangulo-3Contato" />
       </main>
-
-    </>
   );
 };
 
