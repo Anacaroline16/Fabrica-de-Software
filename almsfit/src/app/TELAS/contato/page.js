@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./contato.module.css";
 // import styles from "./globals.css";
-import Contato from "./TELAS/contato";
+// import Contato from "./TELAS/contato";
 
 <Contato/>
 export default function Contato() {  
@@ -29,10 +29,10 @@ export default function Contato() {
           </form>
         </div>
         
-        <Image>
+        {/* <Image>
           src="./img/Rectangle 91 (1).png" 
           className="retangulo-1Contato"
-        </Image>
+        </Image> */}
 
         <a href="https://www.google.com/maps/d/u/0/edit?mid=1ADwq4SUaCVgrfH6Q__1TxsjlTXh2vOQ&usp=sharing" target="_blank" rel="noopener noreferrer">
           <img src="./img/Screenshot 2024-09-27 155751.png" className="retangulo-2Contato" />
