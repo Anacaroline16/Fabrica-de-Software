@@ -58,7 +58,7 @@ function Dropdown({ label, valorSelecionado, opcoes, aoSelecionar }) {
     );
 }
 
-export default function cadastrarFuncionario() {
+export default function CadastrarFuncionario() {
     const [telefone, setTelefone] = useState("+55 ");
     const [cpf, setCpf] = useState("");
     const [cpfMessage, setCpfMessage] = useState("");

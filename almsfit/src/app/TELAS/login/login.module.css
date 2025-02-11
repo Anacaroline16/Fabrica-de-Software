@@ -1,0 +1,125 @@
+.containerTelaLogin{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.botaoVoltar{
+    position: absolute;
+    margin: 1%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.containerImagem{
+    width: 50%;
+    background-image: url('../../../../public/images/academiaImagme.png');
+    display: flex;
+}
+
+.logo{
+    margin: 20% auto auto;
+    width: 250px;
+    height: 150px;
+}
+
+.titulo{
+    font-size: 36px;
+}
+
+.formularioLogin{
+    margin: 10% auto auto;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+}
+
+.containerInput::after{
+    content: "";
+    width: 100%;
+    border-radius: 20px;
+    height: 2.5px;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+}
+
+.containerInput{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    position: relative;
+}
+
+.input{
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: none;
+    padding: 0 2%;
+    color: white;
+}
+
+.input:focus{
+    border: none;
+    outline: none;
+}
+
+.formulario{
+    justify-content: space-around;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.botaoMostrarSenha{
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.listaLinks > li {
+    display: flex;
+}
+
+.listaLinks{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.linkRedirecionamento{
+    color: rgba(163, 0, 0, 1);
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.linkRedirecionamento:hover{
+    color: rgb(199, 14, 14);
+}
+
+.botaoEnviar{
+    background-color: rgba(163, 0, 0, 1);
+    color: white;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    padding: 1% 2%;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.botaoEnviar{
+    background-color: rgb(131, 9, 9);
+}
+
+@media screen  and (max-width: 855px){
+    .listaLinks{
+        font-size: 10px;
+    }
+}

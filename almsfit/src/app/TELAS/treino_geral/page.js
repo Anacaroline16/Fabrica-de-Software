@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./paginaTreinos.module.css"
-import { Eye, EyeOff, ChevronRight, CornerUpLeft } from "lucide-react";
+import { ChevronRight, CornerUpLeft } from "lucide-react";
 
 const usuarioNome = 'Julia Martins Rodrigues'
 const dadosTreino = [
