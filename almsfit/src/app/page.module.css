@@ -31,6 +31,12 @@
     margin: auto;
     border-radius: 1rem;
 }
+.titulo-principal{
+    font-size: 3.5em;
+}
+.paragrafo-principal{
+    font-size: 2rem;
+}
 .botao_pmrBloco {
     background-color:var(--cor-fundo-botao);
     display: flex;
@@ -40,16 +46,17 @@
     border: none;
     padding: .5rem;
     outline: none;
-    margin: 10px 2px 0 10px;
+    margin: 5% 2px ;
+    box-shadow: 0px 3px 33.4px rgba(255,255,255,0.35);
 }
-.botao_pmrBloco img{
+.botao_pmrBloco image{
     padding: 2px;
 }
 /*   BLOCO  2*/
 
 .segundo_bloco{
     text-align: center;
-    background-color: var(--cor-fundo-bloco-2);
+    background: linear-gradient(#A10000 36%, #3B0000 100%);
     height: 60vh;
 } 
 
