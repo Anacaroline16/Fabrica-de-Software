@@ -1,5 +1,4 @@
 .container {
-    text-align: center;
     padding: 20px;
     justify-content: left;
     display: flex;
@@ -12,12 +11,13 @@
   
   .contact_h1 {
     color: #ffffff;
-    font-style: oblique;
+    margin-bottom: 10px;
   }
 
   .contact_h3{
     color:rgb(255, 255, 255);
     margin-bottom: 10px;
+    font-style: oblique;
   }
   
   .formulario input,
@@ -41,14 +41,13 @@
     border: none;
     border-radius: 50px;
     cursor: pointer;
-
+    display: flex;
   }
   
   .formulario button:hover {
     background: #a53a3a;
   }
   
-
 .quadradoRed{
   display: flex;
   position: absolute;

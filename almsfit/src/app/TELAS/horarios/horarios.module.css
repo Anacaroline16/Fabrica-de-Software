@@ -1,15 +1,20 @@
 
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-  }
-  
   /* Main */
-  .main {
+  .Maincontainer {
     text-align: center;
     padding: 40px;
   }
+
+  .container_funcionamento {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .horario_h1{
+    text-align: center;
+  }
+
   
   .horarios-container {
     display: flex;
@@ -29,11 +34,17 @@
   
   .TituloMaior {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     margin-top: 15px;
   }
   
   .subtitulo {
-    color: #555;
+    color: #ffffff;
+    font-size: -10px;
   }
+
+  .TodasAsImgs{
+    /* display: flex; */
+  }
+  
   
