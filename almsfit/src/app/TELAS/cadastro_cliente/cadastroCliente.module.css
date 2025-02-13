@@ -1,65 +1,114 @@
+.alinhar{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items:center ;
+}
 .containerPrincipal{
-    background-color: #A10000;
-    width: 30%;
-    height: 70vh;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 2%;
-    margin-bottom:5%;
+  background-color: #A10000;
+  width: 30%;
+  height: 80vh;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom:2%;
 }
 .form{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }
 .dateInputs {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .dateInputs select {
-    width: 30%;
+  width: 30%;
 }
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-    background-color: #A10000;
-    color:#FFFFFF;
-    font-size: 105%;
-    font-weight: 900;
-    border: none;
-    width: 9%;
-    padding: 15px;
-    border-radius: 100px;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  background-color: #A10000;
+  color:#FFFFFF;
+  font-size: 105%;
+  font-weight: 900;
+  border: none;
+  width: 9%;
+  padding: 15px;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-bottom: 2%;
   }
 .cadastro{
-    
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .perfil{
-    margin-top: 20%;
+  margin-top: 20%;
 }
 .iconeOlho {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white;
-    padding: 5px;
-  }
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+}
+.form input{
+  border: 0;
+  padding: 3%;
+  background-color: rgba(31, 69, 120, 0.2);
+}
+.form input::placeholder{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 110%;
+}
+.selecao{
+  border: 0;
+  color: rgba(255, 255, 255, 0.8);
+  background-color:rgba(31, 69, 120, 0.2) ;
+  padding: 5px;
+}
+.senhaContainer input{
+  width: 90%;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  background: #A10000;
+  color: white;
+  padding: 20px;
+  height: 40%;
+  width: 35%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
 
-
+.closeButton {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.setaVoltar{
+  display: flex;
+  justify-content: start;
+}
+.div{
+  margin-top: 15%;
+}

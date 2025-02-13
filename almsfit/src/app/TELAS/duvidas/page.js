@@ -1,9 +1,15 @@
+'use client'
 import styles from "./duvidas.module.css"
 import Image from "next/image"
 import Link from "next/link";
-
+import { useState } from "react";
 
 export default function Duvidas(){
+	const [caixaAberta, setCaixaAberta] = useState(false)
+		const handleSubmit = (e) => {
+			e.preventDefault();
+			setCaixaAberta(true);
+		  };
     return (
 			<div>
 				<h1 className={styles.containerPrincipal}>Dúvidas</h1>
@@ -69,7 +75,22 @@ export default function Duvidas(){
 						</form>
 					</div>
 				</div>
-				<button className={styles.botao}>Enviar</button>
+				<button type="submit" className={styles.button} onSubmit={handleSubmit}>
+                    Enviar <Image src="/assets/seta.png" width="10" height="13" alt="seta botão" />
+                </button>
+				{caixaAberta && (
+                    <div className={styles.overlay}>
+                        <div className={styles.modal}>
+                            <button className={styles.closeButton} onClick={() => setCaixaAberta(false)}>
+                            </button>
+                                <Link href="/"><Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={styles.setaVoltar}/></Link>
+                                <div className={styles.div}>
+                                    <h2 className={styles.frasebotao}>ENVIADO COM SUCESSO!</h2>
+                                    <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Seta voltar" className={styles.finalizado} />
+                                </div>
+                        </div>
+                    </div>
+        )}
 			</div>
 		);
 }
