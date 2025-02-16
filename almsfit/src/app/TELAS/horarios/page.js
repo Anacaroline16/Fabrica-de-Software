@@ -18,25 +18,32 @@ export default function Horário() {
                   alt="retangulo-1"/>
               </div>
 
+              <div className={styles.img5}>
+              <Image src="/images/Rectangle 99.png"
+                  width={450}
+                  height={350}
+                  alt="retangulo-5"/>
+              </div>
+
               </div> 
 
               <div className={styles.TodasAsImgsADireita}>
               <Image src="/images/Rectangle 91 (2).png" 
                   alt="retangulo-2"
-                  width={450}
-                  height={370}
+                  width={470}
+                  height={380}
                   className={styles.img2}/>
 
               <Image src="/images/Rectangle 91.png" 
                   alt="retangulo-3" 
                   width={500}
-                  height={370}
+                  height={380}
                   className={styles.img3}/>
 
               <Image src="/images/Rectangle 97 (1).png" 
                   alt="retangulo-4" 
                   width={380}
-                  height={340}
+                  height={420}
                   className={styles.img4}/>
               </div>
             
