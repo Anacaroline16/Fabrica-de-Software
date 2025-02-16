@@ -24,8 +24,7 @@ export default function Horário() {
                   height={350}
                   alt="retangulo-5"/>
               </div>
-
-              </div> 
+            </div> 
 
               <div className={styles.TodasAsImgsADireita}>
               <Image src="/images/Rectangle 91 (2).png" 
