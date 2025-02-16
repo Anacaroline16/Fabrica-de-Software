@@ -1,0 +1,99 @@
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .checklist li {
+    display: flex;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    justify-content: start; /* Alinha a lista à direita */
+    padding-left: 400px;
+  }
+
+  .checklist_02{
+    list-style: none;
+    padding: 0;
+  }
+
+  .checklist_02li li{
+    display: flex;
+    background: rgb(0, 0, 0);
+    margin: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    justify-content: flex-end;
+  }
+
+  .checklist_02 li{
+    display: flex;
+    justify-content: flex-end;
+    background: rgb(0, 0, 0);
+    margin: 5px;
+    border-radius: 5px;
+    margin-right: 500px;
+    margin-bottom: -120px;
+  }
+  
+  .checklist img {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+  }
+
+  .checklist_02 img{
+    width: 100px;
+    height: 60px;
+    position: absolute;
+  }
+  
+  .clearButton, .funcButton {
+    background: #A10000;
+    border-radius: 15px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .clearButton:hover, .funcButton:hover {
+    background: #ca1d1d;
+  }
+  
+
+  .checkzinho{
+    margin-left: -145px;
+    position: absolute;
+  }
+
+  .quadradored01{
+    justify-content: flex-end;
+    margin-bottom: -20px;
+    margin-left: 300px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    position: relative;
+  }
+
+  .quadradored02{
+    justify-content: flex-start;
+    position: absolute;
+    margin-top: -500px;
+    margin-right: -400px;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+  }
+  
