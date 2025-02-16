@@ -1,0 +1,74 @@
+// <!DOCTYPE html>
+// <html lang="en">
+
+// <head>
+//   <meta charset="UTF-8">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <link rel="stylesheet" href="css/style.css">
+//   <link rel="stylesheet" href="./css/header.css">
+//   <link rel="stylesheet" href="./css/footer.css">
+//   <link rel="stylesheet" href="./js/script.js">
+//   <link rel="stylesheet" href="./css/footer.css">
+//   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+//   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+//   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+//   <link rel="manifest" href="/site.webmanifest">
+//   <link rel="shortcut icon" href="../../Telas SOFIA/Duvida/img/ALMS FIT (Site) (4).png" type="image/x-icon">
+//   <script src="https://kit.fontawesome.com/df40682070.js" crossorigin="anonymous"></script>
+//   <title>ALMS Fit</title>
+// </head>
+
+// <header>
+//   <nav>
+//       <div class="menu">
+//           <div><img src="../../design/img/Sobre (12) 2.png " alt="Logo"></div>
+//           <div class="ancoras">
+//               <ul> 
+//                   <li><a href="../Telas ANA/home/index.html">Home</a></li>
+//                   <li><a href="../../Telas Maria/horário/index.html">Horários</a></li>
+//                   <li><a href="../../abrica/escolha_cad.html">Treinos</a></li>
+//                   <li><a href="../../Telas Maria/contato/index.html">Contato</a></li>
+//               </ul>                   
+//           </div>
+//           <img  src="../../design/img/Sobre (13) 2.png" class="area">    
+//       </div>
+//   </nav>
+//   <div class="borda"></div>  
+// </header>
+
+// <html>
+// <body>
+//   <main>
+//     <h1>CHECKLIST</h1>
+//     <div class="button_alter">
+//       <button type="submit">*Alteração apenas funcionários</button>
+//     </div>
+//     <div class="checklist-container">
+//       <ul class="checklist">
+//         <li><input type="checkbox" id="item1"><label for="item1">Leg press 45°<p class="center">Séries: 4 Rep: 12 <img src="./img/ALMS FIT 1.png" class="img1"></label></li>
+//         <li><input type="checkbox" id="item2"><label for="item2">Adutor <br>Séries: 4 Rep: 15 <img src="./img/27 1.png" class="img2"></label></li>
+//         <li><input type="checkbox" id="item3"><label for="item3">Panturilha <br>Séries: 4 Rep: 12 <img src="./img/26 1.png" class="img3"></label></li>
+//         <li><input type="checkbox" id="item4"><label for="item4">Agachamento <br>Séries: 4 Rep: 12 <img src="./img/28 1.png" class="img4"></label></li>
+//         <li><input type="checkbox" id="item5"><label for="item4">Flexora <br>Séries: 4 Rep: 12 <img src="./img/29 2.png" class="img5"></label></li>
+//       </ul>
+
+//       <ul class="checklist1">
+//         <li><input type="checkbox" id="item6"><label for="item6">Rosca Unilateral<br>Séries: 2 Rep: 12 <img src="./img/30 1.png" class="img6"></label></li>
+//         <li><input type="checkbox" id="item7"><label for="item7">Abdutor <br>Séries: 4 Rep: 15 <img src="./img/31 1.png" class="img7"></label></li>
+//         <li><input type="checkbox" id="item8"><label for="item8">Remada <br>Séries: 4 Rep: 12 <img src="./img/33 1.png" class="img8"></label></li>
+//         <li><input type="checkbox" id="item9"><label for="item9">Supino <br>Séries: 4 Rep: 12 <img src="./img/32 1.png" class="img9"></label></li>
+//         <li><input type="checkbox" id="item10"><label for="ite10">Tríceps <br>Séries: 4 Rep: 12 <img src="./img/34 1.png" class="img10"></label></li>
+//       </ul>
+
+//     </div>
+//     <button onclick="desmarcarTudo()">Desmarcar Tudo</button>
+//     <script>
+//       function desmarcarTudo() {
+//         const checkboxes = document.querySelectorAll('.checklist-container input[type="checkbox"]');
+//         checkboxes.forEach(checkbox => checkbox.checked = false);
+//       }
+//     </script>
+//   </main>
+
+// </body>
+// </html>
