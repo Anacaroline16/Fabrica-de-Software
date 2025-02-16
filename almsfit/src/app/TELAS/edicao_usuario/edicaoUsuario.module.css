@@ -1,0 +1,226 @@
+/* :root{
+    --cor-fundo-:  #476A99;
+    --cor-fundo-botao-cancelar: rgba(166, 0, 3, 0.8);
+    --cor-fundo-botao-salvar: rgba(3, 128, 14, 0.8);
+    --cor-das-letras:#FFFFFF;
+    --cor-fundo-card: rgba(217, 217, 217, 0.4);
+    --cor-de-fundo-dos-input: rgba(31, 69, 120, 0.2);
+    --cor-do-fundo-da-data: rgba(217, 217, 217, 0.5);
+} */
+
+/* body{
+    width: 100vw;
+    height: 100vh;
+    color: var(--cor-das-letras);
+    background-color: var(--cor-fundo-);
+
+}  */
+/* formulario  */
+.alinhar{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.card{
+    width: 50%;
+    
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor-fundo-botao);
+    justify-content: center; 
+}
+.formulario_usuario{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    margin: 5%;
+} 
+
+.h1_editar{
+    text-align: center;
+    margin: 1%;
+}
+
+.container_centralizar{
+    background-color: var(--cor-fundo-card);
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto_perfil{
+    display: flex;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+
+/* inputs    */
+
+
+
+/* coluna 1*/
+
+.coluna_1 {
+    flex-direction: row;
+    display: flex;
+    
+}
+.genero{
+
+    margin: 0 .5rem .5rem  0;
+    background-color: rgb(31, 69, 120, 0.2);
+    border: none;
+    padding: 3%;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(255, 255, 255, 0.8);
+}
+.genero option{
+    background-color:var(--cor-inputs);
+}
+.nome{
+    
+    margin: 0 .5rem .5rem  0;
+    background-color: rgb(31, 69, 120, 0.2);
+    border: none;
+    padding: 3%;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(255, 255, 255, 0.8);
+    
+}
+.nome ::placeholder{
+    color: rgb(255, 255, 255, 0.8);
+}
+
+
+/*coluna 2*/
+
+.coluna_2 input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.email{
+    margin: 0 .5rem .5rem  0;
+    background-color: rgb(31, 69, 120, 0.2);
+    border: none;
+    padding: 3%;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(255, 255, 255, 0.8);
+}
+
+/*coluna 3*/
+
+.coluna_3{
+    display: flex;
+    flex-direction: column;
+    
+}
+.cpf{
+    margin: 0 .5rem .5rem  0;
+    background-color: rgb(31, 69, 120, 0.2);
+    border: none;
+    padding: 3%;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(255, 255, 255, 0.8);
+}
+.rg{
+    margin: 0 .5rem .5rem  0;
+    background-color: rgb(31, 69, 120, 0.2);
+    border: none;
+    padding: 3%;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(255, 255, 255, 0.8);
+}
+.endereco{
+    margin: 0 .5rem .5rem  0;
+    background-color: rgb(31, 69, 120, 0.2);
+    border: none;
+    padding: 3%;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(255, 255, 255, 0.8);
+}
+
+/*datas*/
+
+.datas{
+    margin: 0 .5rem .5rem  0;
+}
+.datas h4{
+    font-size: 14px;
+    margin: 10px 0px;
+    color: rgb(255, 255, 255, 0.8);
+}
+
+
+
+.data{
+    width: 100%;
+    color:rgb(255, 255, 255, 0.8);
+    background-color: rgb(31, 69, 120, 0.2);
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: .8rem;
+    margin: 0 .5rem .5rem  0;
+    padding: 3%;
+
+}
+
+
+/* Botões  */
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    
+    
+    
+}
+.botoes button{
+    color: var(--cor-das-letras);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size:medium;
+}
+
+.cancelar{
+    margin-right: 10rem;
+    background-color: rgb(166, 0, 3, 0.8);
+    color: rgb(255, 255, 255, 0.8);
+    
+}
+/* .cancelar:hover{
+    box-shadow: 0 3px 33.4px #ffffff;
+} */
+
+.salvar{
+    background-color: rgb(3, 128, 14, 0.8);
+    color: rgb(255, 255, 255, 0.8);
+    
+}
+/* .salvar:hover{
+    box-shadow: 0 3px 33.4px #ffffff;
+} */

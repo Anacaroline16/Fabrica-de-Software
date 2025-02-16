@@ -13,8 +13,8 @@ export default function Home() {
                         </h1>
                         <p className={styles.paragrafo_principal}>Melhore sua saúde com a academia: fortaleça seu corpo, reduza o estresse e viva de forma mais equilibrada e feliz.</p>
                         <button className={styles.botao_pmrBloco} type="submit" >  
-                                <Image src="/images/figura_botao_1.png" alt="INSCREVA-SE AGORA" width="50" height="50"/> 
-                                 INSCREVA-SE AGORA
+                                <Image src="/images/figura_botao_1.png" alt="INSCREVA-SE AGORA" width="40" height="40"/> 
+                                INSCREVA-SE AGORA
                         </button>  
                     </div> 
                     <div className={styles.pmrBloco_coluna2}>

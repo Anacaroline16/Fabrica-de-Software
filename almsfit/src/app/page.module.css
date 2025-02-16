@@ -47,10 +47,10 @@
     padding: .5rem;
     outline: none;
     margin: 5% 2px ;
-    box-shadow: 0px 3px 33.4px rgba(255,255,255,0.35);
+    box-shadow: 0px 3px 33.4px rgba(255,255,255,0.10);
 }
-.botao_pmrBloco image{
-    padding: 2px;
+.botao_pmrBloco Image{
+    padding: 5px;
 }
 /*   BLOCO  2*/
 
