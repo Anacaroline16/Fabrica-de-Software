@@ -1,0 +1,54 @@
+.container {
+    background: url('../../../../public/images/fundoAcademia.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.campoTexto{
+    font-size: 1.5rem;
+}
+
+.containerBotoes{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 90px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.botoes{
+    background-color: #730000;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    padding: 1%;
+    height: 200px;
+    width: 250px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s;
+    margin: 10px;
+}
+
+.conteudobotao{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+.botoes:hover{
+    background-color: #5f0404;
+}
