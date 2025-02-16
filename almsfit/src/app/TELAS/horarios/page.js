@@ -9,28 +9,37 @@ export default function Horário() {
       <main className={styles.Maincontainer}>
         <div className={styles.container_funcionamento}>
             <h1 className={styles.horario_h1}>HORÁRIOS DE FUNCIONAMENTO</h1>
-            {/* <div className={styles.TodasAsImgs}>
-        <Image src="/images/" alt="retangulo-1" 
-            width={380}
-            height={380}
-            className={styles.}/>
 
-        <Image src="/images/" alt="retangulo-2" className={styles.}
-            width={370}
-            height={370}/>
+            <div className={styles.TodasAsImgs}>
+              <div className={styles.img1}>
+              <Image src="/images/Rectangle 100.png"
+                  width={450}
+                  height={400}
+                  alt="retangulo-1"/>
+              </div>
 
-        <Image src="/images/" 
-            alt="retangulo-3" 
-            width={340}
-            height={340}
-            className={styles.}/>
+              </div> 
 
-        <Image src="/images/" 
-            alt="retangulo-4" 
-            width={340}
-            height={340}
-            className={styles.}/>
-        </div>  */}
+              <div className={styles.TodasAsImgsADireita}>
+              <Image src="/images/Rectangle 91 (2).png" 
+                  alt="retangulo-2"
+                  width={450}
+                  height={370}
+                  className={styles.img2}/>
+
+              <Image src="/images/Rectangle 91.png" 
+                  alt="retangulo-3" 
+                  width={500}
+                  height={370}
+                  className={styles.img3}/>
+
+              <Image src="/images/Rectangle 97 (1).png" 
+                  alt="retangulo-4" 
+                  width={380}
+                  height={340}
+                  className={styles.img4}/>
+              </div>
+            
 
             <div className={styles.horarios}>
               <p className={styles.TituloMaior}>Segunda a sexta:</p>
