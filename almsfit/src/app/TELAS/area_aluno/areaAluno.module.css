@@ -1,0 +1,130 @@
+.container {
+    margin-top: 2%;
+    display: flex;
+    justify-content:center;
+    gap: 10%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.container2{
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+    margin-bottom: 5%;
+}
+.cardContato{
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+    gap: 15%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 15vh;
+}
+.cardPessoal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #8b0000;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 25%;    
+    margin-bottom: 20px;
+}
+
+.foto {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.botaoEditar {
+    background:none;
+    color: #FFFFFF;
+    border: 1px solid #ffffff;
+    padding: 5px 10px;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.botaoEditar:hover{
+    border: 1px solid rgb(88, 0, 0);
+    
+}
+
+.dados p {
+    font-size: 100%;
+    margin-top: 5%;
+}
+.dados{
+    border-top: 1px solid #FFFFFF;
+    width: 100%;
+}
+
+.cardSaude {
+    background: rgba(161, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: left;
+    width: 35%;
+    height: 47vh;
+}
+
+.lesao {
+    font-size: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.opcoes {
+    font-size: 150%;
+    text-align: center;
+}
+
+.botaoOpcao {
+    all: unset;
+    border: 1px solid #8b0000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    margin: 10px auto;
+    font-size: 80%;
+    width: 100%;
+    justify-content: center;
+    overflow: visible;
+}
+
+.botaoOpcao:hover {
+    box-shadow: 2px 2px 10px rgb(255, 255, 255);
+    transition: all 0.3s ease-in-out;
+}
+.lesao{
+    margin-top: 3%;
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    border-radius: 20px;
+    gap: 4%;
+}
+.info, .imc{
+    display: flex;
+    flex-direction: column;
+}
+.detalhes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    border: 1px solid #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 20%;
+    
+}

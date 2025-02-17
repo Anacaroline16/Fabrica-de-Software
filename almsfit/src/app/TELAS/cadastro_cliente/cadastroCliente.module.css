@@ -3,6 +3,7 @@
   justify-content: center;
   flex-direction: column;
   align-items:center ;
+  margin-bottom: 5%;
 }
 .containerPrincipal{
   background-color: #A10000;
@@ -37,12 +38,13 @@
   font-size: 105%;
   font-weight: 900;
   border: none;
-  width: 9%;
+  width: 50%;
   padding: 15px;
   border-radius: 100px;
   cursor: pointer;
-  margin-bottom: 2%;
-  }
+  margin-top: 20%;
+  margin-left: 25%;
+}
 .cadastro{
   display: flex;
   justify-content: center;
