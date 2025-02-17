@@ -31,7 +31,7 @@
     margin-top: 20px;
     font-size: 18px;
     position: absolute;
-    top: 60%; /* Posiciona no centro verticalmente */
+    top: 45%; /*Posiciona no centro verticalmente */
     left: 30%; /* Posiciona no centro horizontalmente */
     transform: translate(-50%, -50%); /* Ajusta para centralizar */
     color: white; /* Cor do texto */
@@ -42,10 +42,10 @@
     margin-top: 20px;
     font-size: 18px;
     position: absolute;
-    top: 75%; /* Posiciona no centro verticalmente */
-    left: 20%; /* Posiciona no centro horizontalmente */
+    top: 59%; /* Posiciona no centro verticalmente */
+    left: 22%; /* Posiciona no centro horizontalmente */
     text-align: left;
-    transform: translateX(-30px);  /* Ajuste o valor conforme necessário */
+    transform: translateX(-20px);  /* Ajuste o valor conforme necessário */
   }
   
   .TituloMaior {
