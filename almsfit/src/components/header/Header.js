@@ -31,14 +31,15 @@ export default function Header() {
 								<Link href="/TELAS/contato">Contato</Link>
 							</li>
 						</ul>
-						<button className={styles.botaoAluno}>
+						<Link href="/TELAS/login"><button className={styles.botaoAluno}>
 							<Image
 								src="/assets/Area Aluno.svg"
 								width="250"
 								height="50"
 								alt="Image área do aluno">
 							</Image>
-						</button>
+						</button></Link>
+						
 					
 			</header>
 		</div>

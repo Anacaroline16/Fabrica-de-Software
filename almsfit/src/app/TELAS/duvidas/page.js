@@ -62,8 +62,10 @@ export default function Duvidas(){
 						<p>Sáb - Dom... 10h00 - 18h00</p>
 					</div>
 					<div className={styles.info2}>
+					<form onSubmit={handleSubmit}>
+						<div className={styles.form}>
 						<h3 className={styles.titulo2}>Entre em contato</h3>
-						<form className={styles.form}>
+						
 							<label className={styles.label}>Nome:</label>
 							<input type="text" placeholder="Digite seu nome" required />
 							<label className={styles.label}>Email:</label>
@@ -72,12 +74,16 @@ export default function Duvidas(){
 							<input type="adress" placeholder="Digite seu endereço" required />
 							<label className={styles.labelText}>Mensagem:</label>
 							<input type="text" placeholder="Digite a mensagem" required />
+						</div>
+						
+							<button type="submit" className={styles.button} 	>
+                    			Enviar <Image src="/assets/seta.png" width="10" height="13" alt="seta botão" />
+                			</button>
 						</form>
+						
 					</div>
 				</div>
-				<button type="submit" className={styles.button} onSubmit={handleSubmit}>
-                    Enviar <Image src="/assets/seta.png" width="10" height="13" alt="seta botão" />
-                </button>
+				
 				{caixaAberta && (
                     <div className={styles.overlay}>
                         <div className={styles.modal}>
