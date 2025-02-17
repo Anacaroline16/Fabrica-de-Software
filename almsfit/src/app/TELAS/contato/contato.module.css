@@ -53,7 +53,7 @@
   position: absolute;
   right: 20px;
   padding-bottom: 20px;
-  margin-right: 80px;
+  margin-right: 400px;
 }
 
 .quadradoWhite{
@@ -68,7 +68,7 @@
   position: absolute;
   right: 10px;
   padding-top: 20px;
-  margin-right: 80px;
+  margin-right: 400px;
 }
 
 .TodasAsImgs{
@@ -76,5 +76,5 @@
   justify-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-right: 80px;
+  margin-right: 400px;
 }
