@@ -46,26 +46,12 @@
 }
 
 
-/* form{
-    padding: 1rem;
-    gap: 2rem;
-    margin: 0 0 1.5rem 0;
-} */
+
 .h1-cadastro{
     text-align: center;
     margin: auto;
 }
-/* .input{   
-    border: none;
-    outline: none;
-    
-}
-.input input{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-} */
+
 .nome{
     display: flex;
     margin: 0 .5rem .5rem  0;
@@ -96,45 +82,7 @@
     outline: none;
     color: rgb(255, 255, 255, 0.8);
 }
-/* .dropdown_series{
-    display: flex;
-    margin: 0 .5rem .5rem  0;
-    background-color: rgb(31, 69, 120, 0.2);
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    color: rgb(255, 255, 255, 0.8);
-}
-.dropdown{
-    display: flex;
-    margin: 0 .5rem .5rem  0;
-    background-color: rgb(31, 69, 120, 0.2);
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    color: rgb(255, 255, 255, 0.8);
-} */
-/* .inputUser{
-    background-color: var(--cor-dos-inputs);
-    color: var(--cor-das-letras);
-    border: none;
-    outline: none;
-    width: 20rem;
-    height: 3rem;
-    border-radius: 4px;
-    padding: .5rem;
-}
-.inputUser::placeholder{
-    color: var(--cor-das-letras);
-    font-family: 'Poppins';
-} */
 
-/********** select********/
-/* .dropdown{
-    margin-top: 20px;
-    position: relative;
-}
-*/
 .btn_selecione{
     display: flex;
     margin: 0 .5rem .5rem  0;
@@ -153,36 +101,11 @@
 
 }
 
-/* .conteudo_selecione, .conteudo_selecione_series{
-    border: 1px solid var(--cor-botoes);
-    border-radius: .5rem;
-    padding: .6rem;
-    width: 20rem;
-    margin-top: .1rem;
-    display: none;
-    position: absolute;
-    z-index: 1;
-    background-color: var(--cor-dos-inputs);
-} */
+
 .ativo{
      display: block !important;
 }
-/* .conteudo_selecione input, .conteudo_selecione_series input{
-    padding: .2rem;
-    width: 15rem;
-    border-radius: .5rem;
-    border: none;
-    outline: none;
-    font-size: 1rem;
 
-} */
-/* .conteudo_selecione, .conteudo_selecione_series, .opcoes{
-    max-width: 20rem;
-    list-style: none;
-    overflow: auto;
-    height: 50vh;
-    font-size: 1rem ;
-} */
 .opcoes li{
     cursor: pointer;
     overflow: hidden;
@@ -195,9 +118,7 @@
     background-color: var(--cor-dos-inputs);
 }
 
-/* .dropdown .active, .dropdown_series .active{
-    display: block;
-} */
+
 
 /* BOTAO            */
 
