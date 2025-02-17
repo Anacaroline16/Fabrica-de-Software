@@ -20,6 +20,9 @@ export default function EdicaoUsuario() {
                                 width={200} 
                                 height={200} 
                             />
+                            <div>
+                              
+                            </div>
                             <div className={style.coluna_1}>
                                 <input type="text" name="nome" className={style.nome}  required placeholder="Nome(Apelido):"/>
                                 <select name="genero" className={style.genero} defaultValue="#"  >

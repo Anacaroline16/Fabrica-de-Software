@@ -65,6 +65,12 @@
     text-align: center;
 
 }
+.container_centralizar input{
+  width: 100%;
+}
+.container_centralizar input::placeholder{
+  color: #FFFFFF;
+}
 
 
 /* inputs    */
