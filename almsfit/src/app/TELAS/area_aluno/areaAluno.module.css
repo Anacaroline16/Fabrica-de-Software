@@ -90,6 +90,8 @@
 
 .botaoOpcao {
     all: unset;
+    text-decoration: none;
+    list-style: none;
     border: 1px solid #8b0000;
     padding: 10px 20px;
     border-radius: 20px;
@@ -100,6 +102,7 @@
     width: 100%;
     justify-content: center;
     overflow: visible;
+    color: #FFFFFF;
 }
 
 .botaoOpcao:hover {

@@ -45,14 +45,14 @@ export default function Login() {
                     <ul className={styles.listaLinks}>
                         <li>
                             <p>Deseja fazer parte de nossa equipe?</p>
-                            <Link className={styles.linkRedirecionamento} href="#">Acesse aqui</Link>
+                            <Link className={styles.linkRedirecionamento} href="./cadastro_funcionario">Acesse aqui</Link>
                         </li>
                         <li>
                             <p>Não possui cadastro?</p>
-                            <Link className={styles.linkRedirecionamento} href="#">Acesse aqui</Link>
+                            <Link className={styles.linkRedirecionamento} href="./cadastro_cliente">Acesse aqui</Link>
                         </li>
                     </ul>
-                    <button className={styles.botaoEnviar} type="submit">Entrar <ChevronRight/></button>
+                    <Link href="./escolha_cadastro"> <button className={styles.botaoEnviar} type="submit">Entrar <ChevronRight/></button></Link>
                 </form>
             </div>
         </div>

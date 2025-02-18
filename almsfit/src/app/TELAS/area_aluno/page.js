@@ -59,10 +59,11 @@ export default function AreaAluno(){
                     
                     <div className={styles.opcoes}>
                         <h3>O que deseja fazer?</h3>
-                        <button className={styles.botaoOpcao}>Treinos da semana</button>
-                        <button className={styles.botaoOpcao}>Cálculo de IMC</button>
-                        <button className={styles.botaoOpcao}>Dúvidas</button>
-                        <button className={styles.botaoOpcao}>Horários</button>
+                        <Link href="./treino_geral"><button className={styles.botaoOpcao}>Treinos da semana</button></Link>
+                        <Link href="./avaliar_IMC"><button className={styles.botaoOpcao}>Cálculo de IMC</button></Link>
+                        <Link href="./duvidas"><button className={styles.botaoOpcao}>Dúvidas</button></Link>
+                        <Link href="./horarios"><button className={styles.botaoOpcao}>Horários</button></Link>
+                        
                     </div>
                 </div>
                     

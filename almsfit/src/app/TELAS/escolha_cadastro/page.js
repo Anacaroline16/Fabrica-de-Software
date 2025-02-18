@@ -12,7 +12,7 @@ export default function EscolhaCadastro() {
                 <p>“Viva sem dor, viva em paz”, Alms Fit sempre com você!</p>
             </div>
             <div className={styles.containerBotoes}>
-                <Link href='#' className={styles.botoes}>
+                <Link href='./casdastro_equipamentos' className={styles.botoes}>
                     <div className={styles.conteudobotao}>
                         <Image
                             src="/images/iconeEquipamentos.png"
@@ -20,10 +20,11 @@ export default function EscolhaCadastro() {
                             height="90"
                             alt="icone equipamentos"
                         />
+
                         <p>Equipamentos</p>
                     </div>
                 </Link>
-                <Link href='#' className={styles.botoes}>
+                <Link href='./area_aluno' className={styles.botoes}>
                     <div className={styles.conteudobotao}>
                         <Image
                             src="/images/iconeAreaDocliente.png"
@@ -35,7 +36,7 @@ export default function EscolhaCadastro() {
                     </div>
 
                 </Link>
-                <Link href='#' className={styles.botoes}>
+                <Link href='./treino_geral' className={styles.botoes}>
                     <div className={styles.conteudobotao}>
                         <Image
                             src="/images/iconeConsultarHorarios.png"

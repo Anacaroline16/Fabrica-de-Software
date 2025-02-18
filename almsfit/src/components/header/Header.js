@@ -25,7 +25,7 @@ export default function Header() {
 								<Link href="/TELAS/horarios">Horários</Link>
 							</li>
 							<li className={styles.link_itens}>
-								<Link href="/">Treinos</Link>
+								<Link href="/TELAS/login">Treinos</Link>
 							</li>
 							<li className={styles.link_itens}>
 								<Link href="/TELAS/contato">Contato</Link>

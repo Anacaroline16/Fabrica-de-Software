@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./paginaTreinos.module.css"
+import Link from "next/link";
 import { ChevronRight, CornerUpLeft } from "lucide-react";
 
 const usuarioNome = 'Julia Martins Rodrigues'
@@ -196,25 +197,27 @@ export default function TreinoSemana() {
             </div>
 
             <div className={styles.containerTreinos}>
-                {dadosTreino.map((treino) => (
-                    <div key={treino.id} className={styles.cardTreino}>
-                        <table className={styles.tabelaTreinos}>
-                            <thead>
-                                <tr key={treino.id} className={styles.cabecalho}>
-                                    <th colSpan="2">{treino.dia}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {treino.treino.map((exercicio) => (
-                                    <tr key={exercicio.id}>
-                                        <td className={styles.colunaTipoTreino}>{exercicio.tipoTreino}</td>
-                                        <td className={styles.colunaRepeticoes}>{exercicio.repeticoes}</td>
+                <Link href="./check_list" className={styles.lista}>
+                    {dadosTreino.map((treino) => (
+                        <div key={treino.id} className={styles.cardTreino}>
+                            <table className={styles.tabelaTreinos}>
+                                <thead>
+                                    <tr key={treino.id} className={styles.cabecalho}>
+                                        <th colSpan="2">{treino.dia}</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                ))}
+                                </thead>
+                                <tbody>
+                                    {treino.treino.map((exercicio) => (
+                                        <tr key={exercicio.id}>
+                                            <td className={styles.colunaTipoTreino}>{exercicio.tipoTreino}</td>
+                                            <td className={styles.colunaRepeticoes}>{exercicio.repeticoes}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    ))}
+                </Link>
             </div>
         </div>
     )

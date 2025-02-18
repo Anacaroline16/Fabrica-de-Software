@@ -149,3 +149,9 @@
 .containerInputs input::placeholder{
     color: white;
 }
+.lista{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    display: flex;
+}
