@@ -75,10 +75,10 @@ const FormularioIMC = () => {
                             </label>
                             <div className={styles.campoSelecionarchekBox}>
                                 <label>
-                                    <input type="checkbox" onChange={(e) => setAdulto(e.target.checked ? 1 : 0)} /> Adulto
+                                    <input className={styles.campoChekBox}  type="checkbox" onChange={(e) => setAdulto(e.target.checked ? 1 : 0)} /> Adulto
                                 </label>
                                 <label>
-                                    <input type="checkbox" onChange={(e) => setCrianca(e.target.checked ? 1 : 0)} /> Criança
+                                    <input className={styles.campoChekBox}  type="checkbox" onChange={(e) => setCrianca(e.target.checked ? 1 : 0)} /> Criança
                                 </label>
                             </div>
                         </div>
@@ -88,10 +88,10 @@ const FormularioIMC = () => {
                             </label>
                             <div className={styles.campoSelecionarchekBox}>
                                 <label>
-                                    <input type="checkbox" onChange={(e) => setFeminino(e.target.checked ? 1 : 0)} /> Feminino
+                                    <input className={styles.campoChekBox} type="checkbox" onChange={(e) => setFeminino(e.target.checked ? 1 : 0)} /> Feminino
                                 </label>
                                 <label>
-                                    <input type="checkbox" onChange={(e) => setMasculino(e.target.checked ? 1 : 0)} /> Masculino
+                                    <input className={styles.campoChekBox}  type="checkbox" onChange={(e) => setMasculino(e.target.checked ? 1 : 0)} /> Masculino
                                 </label>
                             </div>
                         </div>

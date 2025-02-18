@@ -40,7 +40,7 @@ function Dropdown({ label, valorSelecionado, opcoes, aoSelecionar }) {
                 <div className={styles.labelDropDown}>
                     <label className={styles.nomeDropDown}>{label}:</label>
                     <div className={styles.valorSelecionado}>{valorSelecionado}</div>
-                    <div className={styles.chevronDropDown}>{dropdownAberto ? <ChevronUp size={20}/> : <ChevronDown size={20}/>}</div>
+                    <div className={styles.chevronDropDown}>{dropdownAberto ? <ChevronUp size={20} /> : <ChevronDown size={20} />}</div>
                 </div>
                 {dropdownAberto && (
                     <div className={styles.containerOpcoesDropDown}>
@@ -73,7 +73,8 @@ export default function CadastrarFuncionario() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [showPasswordConfirmar, setShowPasswordConfrimar] = useState(false);
-    
+
+    const [caixaAberta, setCaixaAberta] = useState(false);
 
 
     const handletelefoneChange = (e) => {
@@ -133,6 +134,7 @@ export default function CadastrarFuncionario() {
             setDiaSelecionado(dias[dias.length - 1]);
         }
         setDiasDisponiveis(dias);
+        document.body.style.overflow = caixaAberta ? "hidden" : "auto";
     }, [mesSelecionado, anoSelecionado]);
 
 
@@ -188,13 +190,13 @@ export default function CadastrarFuncionario() {
             ano: anoSelecionado,
         };
 
-        alert("Cadastro realizado com sucesso!");
+        setCaixaAberta(true)
     };
 
     return (
-        <div className={styles.containerFormulario}>
+        <div className={styles.containerFormulario} style={{ overflow: caixaAberta ? "hidden" : "auto" }}>
             <div className={styles.campoSuperior}>
-                <Link href="/" className={styles.linkVoltar}><CircleArrowLeft size={50}/></Link>
+                <Link href="/" className={styles.linkVoltar}><CircleArrowLeft size={50} /></Link>
             </div>
             <form onSubmit={handleSubmit} className={styles.formulario}>
                 <div className={styles.conteudoFormulario}>
@@ -246,7 +248,7 @@ export default function CadastrarFuncionario() {
                                 onClick={() => setShowPassword(!showPassword)}
                                 className={styles.botaoMostrarSenha}
                             >
-                                {showPassword ?  <Eye size={20} />  : <EyeOff size={20} />}
+                                {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
                             </button>
                         </div>
                     </div>
@@ -269,14 +271,28 @@ export default function CadastrarFuncionario() {
                                 onClick={() => setShowPasswordConfrimar(!showPasswordConfirmar)}
                                 className={styles.botaoMostrarSenha}
                             >
-                                {showPasswordConfirmar ?  <Eye size={20} />  : <EyeOff size={20} />} 
+                                {showPasswordConfirmar ? <Eye size={20} /> : <EyeOff size={20} />}
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <button type="submit" className={styles.botaoEnviarFormulario}>Cadastrar <ChevronRight size={20} className={styles.setaBotao}/></button>
+                <button type="submit" className={styles.botaoEnviarFormulario}>Cadastrar <ChevronRight size={20} className={styles.setaBotao} /></button>
             </form>
+            {caixaAberta && (
+                <div className={styles.overlay}>
+                    <div className={styles.modal}>
+                        <button className={styles.closeButton} onClick={() => setCaixaAberta(false)}>
+                        </button>
+                        <Link href="/"><Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={styles.setaVoltar} /></Link>
+                        <div className={styles.div}>
+                            <h2 className={styles.frasebotao}>CADASTRO FINALIZADO!</h2>
+                            <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Seta voltar" className={styles.finalizado} />
+                        </div>
+
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

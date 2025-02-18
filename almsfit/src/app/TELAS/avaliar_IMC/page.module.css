@@ -48,6 +48,20 @@
     margin: auto;
     display: flex;
     flex-direction: space-around;
+    align-items: center;
+}
+
+.campoSelecionarchekBox label{
+    align-items: center;
+    display: flex; 
+}
+
+.campoChekBox{
+    width: 20px; /* Define a largura */
+    height: 20px; /* Define a altura */
+    transform: scale(1.5); /* Aumenta o tamanho */
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .campoFormularioFundo{
