@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronRight, CircleArrowLeft } from "lucide-react";
 import styles from "./page.module.css";
 import Link from "next/link";
@@ -14,6 +14,8 @@ const FormularioIMC = () => {
     const [crianca, setCrianca] = useState(0);
     const [feminino, setFeminino] = useState(0);
     const [masculino, setMasculino] = useState(0);
+
+    const [caixaAberta, setCaixaAberta] = useState(false);
 
     const calcularIMC = (e) => {
         e.preventDefault();
@@ -56,7 +58,16 @@ const FormularioIMC = () => {
         };
 
         console.log(valoresApresentados);
+        setCaixaAberta(true)
     };
+
+    useEffect(() => {
+        if (caixaAberta) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+    }, [caixaAberta]);
 
     return (
         <div className={styles.containerFormulario}>
@@ -75,10 +86,10 @@ const FormularioIMC = () => {
                             </label>
                             <div className={styles.campoSelecionarchekBox}>
                                 <label>
-                                    <input className={styles.campoChekBox}  type="checkbox" onChange={(e) => setAdulto(e.target.checked ? 1 : 0)} /> Adulto
+                                    <input className={styles.campoChekBox} type="checkbox" onChange={(e) => setAdulto(e.target.checked ? 1 : 0)} /> Adulto
                                 </label>
                                 <label>
-                                    <input className={styles.campoChekBox}  type="checkbox" onChange={(e) => setCrianca(e.target.checked ? 1 : 0)} /> Criança
+                                    <input className={styles.campoChekBox} type="checkbox" onChange={(e) => setCrianca(e.target.checked ? 1 : 0)} /> Criança
                                 </label>
                             </div>
                         </div>
@@ -91,7 +102,7 @@ const FormularioIMC = () => {
                                     <input className={styles.campoChekBox} type="checkbox" onChange={(e) => setFeminino(e.target.checked ? 1 : 0)} /> Feminino
                                 </label>
                                 <label>
-                                    <input className={styles.campoChekBox}  type="checkbox" onChange={(e) => setMasculino(e.target.checked ? 1 : 0)} /> Masculino
+                                    <input className={styles.campoChekBox} type="checkbox" onChange={(e) => setMasculino(e.target.checked ? 1 : 0)} /> Masculino
                                 </label>
                             </div>
                         </div>
@@ -133,6 +144,20 @@ const FormularioIMC = () => {
                     </button>
                 </form>
             </div>
+            {caixaAberta && (
+                <div className={styles.overlay}>
+                    <div className={styles.modal}>
+                        <button className={styles.closeButton} onClick={() => setCaixaAberta(false)}>
+                        </button>
+                        <Link href="/"><Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={styles.setaVoltar} onClick={() => setCaixaAberta(false)} /></Link>
+                        <div className={styles.div}>
+                            <h2 className={styles.frasebotao}>CADASTRO FINALIZADO!</h2>
+                            <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Seta voltar" className={styles.finalizado} />
+                        </div>
+
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

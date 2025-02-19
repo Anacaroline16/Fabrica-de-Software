@@ -41,7 +41,7 @@
 
 }
 
-.inputPrimeiroCampoSenha{
+.inputPrimeiroCampoSenha {
     margin-top: 24px;
     background-color: var(--cor-inputs);
     color: white;
@@ -59,7 +59,7 @@
     background-color: #74050e3d;
 }
 
-.inputPrimeiroCampo>input{
+.inputPrimeiroCampo>input {
     background-color: var(--cor-inputs);
     border: none;
     color: white;
@@ -68,7 +68,7 @@
     padding: 1%;
 }
 
-.inputSenha{
+.inputSenha {
     background-color: var(--cor-inputs);
     border: none;
     color: white;
@@ -87,36 +87,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .modal {
+}
+
+.modal {
     background: #A10000;
     color: white;
     padding: 20px;
-    height: 40%;
-    width: 35%;
+    height: 70%;
+    width: 65%;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     position: relative;
-  }
-  
-  .closeButton {
+}
+
+.closeButton {
     position: absolute;
     background: none;
     border: none;
     cursor: pointer;
     color: white;
-  }
-  .setaVoltar{
+}
+
+.setaVoltar {
     display: flex;
     justify-content: start;
-  }
-  .div{
-    margin-top: 15%;
-  }
+}
 
-.containerInputSenha{
-    position: relative; 
+.div {
+    margin-top: 15%;
+}
+
+.containerInputSenha {
+    position: relative;
     display: flex;
     align-items: center;
     width: 75%;
@@ -214,7 +217,7 @@
     background-color: #700b14;
 }
 
-.botaoEnviarFormulario{
+.botaoEnviarFormulario {
     background-color: var(--cor-secundaria);
     color: white;
     border: none;
@@ -229,33 +232,33 @@
     transition: all 0.5s;
 }
 
-.setaBotao{
+.setaBotao {
     transition: all 0.5s;
 }
 
-.botaoEnviarFormulario:hover{
+.botaoEnviarFormulario:hover {
     background-color: #ff0000;
 }
 
-.botaoEnviarFormulario:hover > .setaBotao{
+.botaoEnviarFormulario:hover>.setaBotao {
     margin-left: 10px;
 }
 
-.campoSuperior{
+.campoSuperior {
     display: flex;
     padding: 5px;
     width: 100%;
     justify-content: space-between;
 }
 
-.linkVoltar{
+.linkVoltar {
     color: white;
     width: 50px;
     height: 50px;
 }
 
-@media screen and (max-width: 768px){
-    .conteudoFormulario{
+@media screen and (max-width: 768px) {
+    .conteudoFormulario {
         width: 80%;
     }
 
@@ -268,8 +271,8 @@
     }
 }
 
-@media screen and (max-width: 415px){
-    .conteudoFormulario{
+@media screen and (max-width: 415px) {
+    .conteudoFormulario {
         width: 90%;
     }
 }

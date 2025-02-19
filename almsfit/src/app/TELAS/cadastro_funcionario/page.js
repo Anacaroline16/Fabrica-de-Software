@@ -135,7 +135,14 @@ export default function CadastrarFuncionario() {
         }
         setDiasDisponiveis(dias);
         document.body.style.overflow = caixaAberta ? "hidden" : "auto";
-    }, [mesSelecionado, anoSelecionado]);
+
+        if (caixaAberta) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+
+    }, [mesSelecionado, anoSelecionado, caixaAberta]);
 
 
     const isStrongPassword = (pwd) => {
@@ -282,9 +289,9 @@ export default function CadastrarFuncionario() {
             {caixaAberta && (
                 <div className={styles.overlay}>
                     <div className={styles.modal}>
-                        <button className={styles.closeButton} onClick={() => setCaixaAberta(false)}>
+                        <button className={styles.closeButton}>
                         </button>
-                        <Link href="/"><Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={styles.setaVoltar} /></Link>
+                        <Link href="/"><Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={styles.setaVoltar} onClick={() => setCaixaAberta(false)} /></Link>
                         <div className={styles.div}>
                             <h2 className={styles.frasebotao}>CADASTRO FINALIZADO!</h2>
                             <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Seta voltar" className={styles.finalizado} />

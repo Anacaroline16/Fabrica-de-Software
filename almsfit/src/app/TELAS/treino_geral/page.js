@@ -178,7 +178,7 @@ export default function TreinoSemana() {
                 {showmodal && (
                     <div className={styles.modal}>
                         <div className={styles.containerModal}>
-                            <button onClick={() => setShowModal(!showmodal)} className={styles.botaoFechar}><CornerUpLeft/></button>
+                            <button onClick={() => setShowModal(!showmodal)} className={styles.botaoFechar}><CornerUpLeft /></button>
                             <p>
                                 VOCÊ PRECISA SER UM FUNCIONÁRIO AUTORIZADO PARA REALIZAR UMA ALTERAÇÃO. POR FAVOR INSIRA SUAS CREDENCIAIS.
                             </p>
@@ -197,9 +197,10 @@ export default function TreinoSemana() {
             </div>
 
             <div className={styles.containerTreinos}>
-                <Link href="./check_list" className={styles.lista}>
-                    {dadosTreino.map((treino) => (
-                        <div key={treino.id} className={styles.cardTreino}>
+
+                {dadosTreino.map((treino) => (
+                    <div key={treino.id} className={styles.cardTreino}>
+                        <Link href="./check_list" className={styles.lista}>
                             <table className={styles.tabelaTreinos}>
                                 <thead>
                                     <tr key={treino.id} className={styles.cabecalho}>
@@ -215,9 +216,10 @@ export default function TreinoSemana() {
                                     ))}
                                 </tbody>
                             </table>
-                        </div>
-                    ))}
-                </Link>
+                        </Link>
+                    </div>
+                ))}
+
             </div>
         </div>
     )
