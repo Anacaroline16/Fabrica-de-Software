@@ -36,7 +36,7 @@ const Checklist = () => {
         <Image src="/images/ALMS FIT (1) 1.png" className={styles.checkzinho} 
             width={80}
              height={50}
-            alt="Quadrado vermelho"/>
+            alt="check"/>
       <h1>CHECKLIST</h1>
       <button className={styles.funcButton}>*Alteração apenas funcionários</button>
       <ul className={styles.checklist}>
@@ -48,7 +48,8 @@ const Checklist = () => {
               checked={checkedItems[exercicio.id] || false}
               onChange={() => toggleCheck(exercicio.id)}
             />
-            <label htmlFor={`item${exercicio.id}`}>
+            <label className={styles.label}
+             htmlFor={`item${exercicio.id}`}>
               {exercicio.nome} <br />
               Séries: {exercicio.series} Rep: {exercicio.reps}
               <img src={exercicio.img} alt={exercicio.nome} />
@@ -66,7 +67,8 @@ const Checklist = () => {
               checked={checkedItems[exercicio.id] || false}
               onChange={() => toggleCheck(exercicio.id)}
             />
-            <label htmlFor={`item${exercicio.id}`}>
+            <label className={styles.label}
+            htmlFor={`item${exercicio.id}`}>
               {exercicio.nome} <br />
               Séries: {exercicio.series} Rep: {exercicio.reps}
               <img src={exercicio.img} alt={exercicio.nome} />
