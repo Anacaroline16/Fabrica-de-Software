@@ -18,10 +18,10 @@ export default function Contato() {
           </h3>
           <form className={styles.formulario}>
             <label>
-              <input type="text" placeholder="Seu nome:" />
-              <input type="email" placeholder="Seu email:" />
+              <input className={styles.input_form} type="text" placeholder="Seu nome:" />
+              <input className={styles.input_form}  type="email" placeholder="Seu email:" />
             </label>
-            <textarea placeholder="Mensagem:" className="mensagem"></textarea>
+            <textarea className={styles.input_form} placeholder="Mensagem:"></textarea>
             <button type="submit">Enviar</button>
           </form>
         </div>
