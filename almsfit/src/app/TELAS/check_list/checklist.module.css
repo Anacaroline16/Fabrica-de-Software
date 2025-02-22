@@ -6,35 +6,35 @@
   .checklist {
     list-style: none;
     padding: 0;
+    width: 30%;
+    background:#A10000;
+    padding: 1%;
+    border-radius: 20px;
   }
   
   .checklist li {
     display: flex;
     align-items: center;
-    background: rgb(0, 0, 0);
-    border-radius: 5px;
-    justify-content: start; /* Alinha a lista à direita*/
-    padding-left: 400px;
-    margin-right: 500px;
-    padding-top: 10px;
-    padding-bottom: 10px; 
+    justify-content: center; 
+    padding: 10px;
+    gap: 5%;
   }
 
   .checklist_02{
     list-style: none;
     padding: 0;
+    width: 30%;
+    background:#A10000;
+    padding: 1%;
+    border-radius: 20px;
   }
 
   .checklist_02 li{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    background: rgb(0, 0, 0);
-    border-radius: 5px;
-    margin-right: 500px;
-    margin-bottom: 10px;
-    margin-bottom: -140px;
-    padding-bottom: 10px;
+    justify-content: center; 
+    padding: 10px;
+    gap: 5%;
   }
   
   .checklist img {
@@ -73,21 +73,11 @@
     position: absolute;
   }
 
-  .quadradored01{
-    justify-content: flex-end;
-    position: absolute;
-    margin-bottom: -110px;
-    margin-left: 300px;
-    display: flex; 
-    justify-content: center; /*Centraliza horizontalmente */
-    align-items: center; /*Alinha verticalmente*/
-  }
-
-  .quadradored02{
-    justify-content: flex-start;
-    position: absolute;
-    margin-top: -500px;
-    justify-content: center;  /*Centraliza horizontalmente */
-    align-items: center; /* Alinha verticalmente */
-  }
+.fundo_checkList{
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+  padding:2% ;
   
+}
