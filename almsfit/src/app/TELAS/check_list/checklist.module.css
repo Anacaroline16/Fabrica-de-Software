@@ -7,7 +7,10 @@
     list-style: none;
     padding: 0;
     width: 30%;
-    background:#A10000;
+    /* background:#A10000; */
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0));
+    border: 1px solid red; /* Borda vermelha de 5px */
+    border-radius: 15px; /* Arredondar as bordas */
     padding: 1%;
     border-radius: 20px;
   }
@@ -17,16 +20,18 @@
     align-items: center;
     justify-content: center; 
     padding: 10px;
-    gap: 5%;
+    gap: 10%;
   }
 
   .checklist_02{
     list-style: none;
     padding: 0;
     width: 30%;
-    background:#A10000;
+    /* background:#A10000; */
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0));
+    border: 1px solid red; /* Borda vermelha de 5px */
+    border-radius: 15px; /* Arredondar as bordas */
     padding: 1%;
-    border-radius: 20px;
   }
 
   .checklist_02 li{
@@ -34,7 +39,7 @@
     align-items: center;
     justify-content: center; 
     padding: 10px;
-    gap: 5%;
+    gap: 10%;
   }
   
   .checklist img {
@@ -57,7 +62,7 @@
     font-weight: bold;
     color: rgb(255, 255, 255);
     border: none;
-    padding: 15px 9px;
+    padding: 20px 9px;
     margin-top: 10px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -81,3 +86,40 @@
   padding:2% ;
   
 }
+
+.checkbox {
+  transform: scale(1.5); /* Aumenta 50% do tamanho padrão */
+  margin-right: 10px; /* Para evitar que fique muito colado ao texto */
+  appearance: none;
+  width: 20px;
+  height: 21px;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Estilizar quando a checkbox está marcada */
+.checkbox:checked::after {
+  content: "✔";
+  font-size: 16px;
+  color: white;
+  position: relative;
+  top: 0.2px;
+  left: 3px;
+}
+
+
+
+/* @media (max-width: 600px) {
+  .checklist {
+    width: 100px;
+    height: auto; 
+  }
+
+  .checklist_02 {
+    width: 100px;
+    height: auto;
+  }
+} */

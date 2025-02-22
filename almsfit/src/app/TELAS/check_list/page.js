@@ -44,14 +44,14 @@ const Checklist = () => {
         <ul className={styles.checklist}>
           {exercicios.map((exercicio) => (
             <li key={exercicio.id}>
-              <input
+              <input className={styles.checkbox}
                 type="checkbox"
-                id={`item${exercicio.id}`}
-                checked={checkedItems[exercicio.id] || false}
-                onChange={() => toggleCheck(exercicio.id)}
+                id={`grupo1-item${exercicio.id}`}
+                checked={checkedItems[`grupo1-item${exercicio.id}`] || false}
+                onChange={() => toggleCheck(`grupo1-item${exercicio.id}`)}
               />
               <label className={styles.label}
-                htmlFor={`item${exercicio.id}`}>
+                htmlFor={`grupo1-item$${exercicio.id}`}>
                 {exercicio.nome} <br />
                 Séries: {exercicio.series} Rep: {exercicio.reps}
                 <img src={exercicio.img} alt={exercicio.nome} />
@@ -63,14 +63,14 @@ const Checklist = () => {
         <ul className={styles.checklist_02}>
           {exercicios_02.map((exercicio) => (
             <li className={styles.checklist_02li} key={exercicio.id}>
-              <input
+              <input className={styles.checkbox}
                 type="checkbox"
-                id={`item${exercicio.id}`}
-                checked={checkedItems[exercicio.id] || false}
-                onChange={() => toggleCheck(exercicio.id)}
+                id={`grupo2-item${exercicio.id}`}
+                checked={checkedItems[`grupo2-item${exercicio.id}`] || false}
+                onChange={() => toggleCheck(`grupo2-item${exercicio.id}`)}
               />
               <label className={styles.label}
-                htmlFor={`item${exercicio.id}`}>
+                htmlFor={`grupo2-item$${exercicio.id}`}>
                 {exercicio.nome} <br />
                 Séries: {exercicio.series} Rep: {exercicio.reps}
                 <img src={exercicio.img} alt={exercicio.nome} />
