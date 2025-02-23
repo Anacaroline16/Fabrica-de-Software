@@ -44,11 +44,12 @@ export default function CadastrarTreinos() {
                         </div>
                         <div className={style.coluna}>
                             <input type="text" name="nomeDoequi" className={style.input} placeholder="NOME DO EQUIPAMENTO:" required />
-                            <Select isMulti className={style.select} options={exerciciosAcademia}></Select>
+
+                            <Select isMulti isSearchable={true} closeMenuOnSelect={true} className={style.select} options={exerciciosAcademia}></Select>
                         </div>
                     </div>
                     <div className={style.linha_3}>
-                        <Select isMulti  styles={{color: 'white', backgroundCOlor: 'yellow'}} options={seriesExercicios} > </Select>
+                        <Select isMulti  isSearchable={true} closeMenuOnSelect={true} className={style.selectSeries} options={seriesExercicios} > </Select>
                     </div>
                     
                 </form>

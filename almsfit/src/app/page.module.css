@@ -1,4 +1,4 @@
-/* parte destinada do css da page (pagina principal do site) */
+
 
 .fundo_home{
     display: flex;
@@ -92,4 +92,60 @@
     align-items: center;
     margin: 1.5rem;
     /* padding: 1rem; */
+}
+
+
+@media (max-width: 600px) {
+    .primeiro_bloco {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .pmrBloco_coluna1, .pmrBloco_coluna2 {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .titulo-principal {
+        font-size: 2.5em; 
+    }
+
+    .paragrafo-principal {
+        font-size: 1.5rem; 
+    }
+
+    .botao_pmrBloco {
+        width: 100%; 
+        margin: 2% 0;
+    }
+
+    .segundo_bloco {
+        height: auto;
+        padding: 2rem;
+    }
+
+    .segundo_bloco h1 {
+        font-size: 1.8em; 
+    }
+
+    .imgs_txt {
+        width: 100%;
+        text-align: center;
+    }
+
+    .quadrinho_1 {
+        padding: 2rem; 
+        width: 100%;
+    }
+
+    .terceiro_bloco {
+        flex-direction: column; 
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .imgs {
+        margin:1rem 0px;
+    }
 }

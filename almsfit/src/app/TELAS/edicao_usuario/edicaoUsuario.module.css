@@ -13,25 +13,27 @@
     height: 100vh;
     color: var(--cor-das-letras);
     background-color: var(--cor-fundo-);
-
 }  */
-/* formulario  */
+
+/* formulario */
 .alinhar{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
+
 .card{
-    width: 50%;
-    
+    width: 45%;
     border-radius: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: var(--cor-fundo-botao);
     justify-content: center; 
+    margin: 1rem;
 }
+
 .formulario_usuario{
     width: 100%;
     height: 100%;
@@ -42,10 +44,6 @@
     margin: 5%;
 } 
 
-.h1_editar{
-    text-align: center;
-    margin: 1%;
-}
 
 .container_centralizar{
     background-color: var(--cor-fundo-card);
@@ -63,29 +61,26 @@
     padding: 20px;
     margin: 0 auto;
     text-align: center;
-
 }
+
 .container_centralizar input{
   width: 100%;
 }
+
 .container_centralizar input::placeholder{
   color: #FFFFFF;
 }
 
-
-/* inputs    */
-
-
+/* inputs */
 
 /* coluna 1*/
 
 .coluna_1 {
     flex-direction: row;
     display: flex;
-    
 }
-.genero{
 
+.genero{
     margin: 0 .5rem .5rem  0;
     background-color: rgb(31, 69, 120, 0.2);
     border: none;
@@ -94,11 +89,12 @@
     outline: none;
     color: rgb(255, 255, 255, 0.8);
 }
+
 .genero option{
     background-color:var(--cor-inputs);
 }
+
 .nome{
-    
     margin: 0 .5rem .5rem  0;
     background-color: rgb(31, 69, 120, 0.2);
     border: none;
@@ -106,20 +102,20 @@
     border-radius: 5px;
     outline: none;
     color: rgb(255, 255, 255, 0.8);
-    
 }
-.nome ::placeholder{
+
+.nome::placeholder{
     color: rgb(255, 255, 255, 0.8);
 }
 
-
-/*coluna 2*/
+/* /coluna 2/ */
 
 .coluna_2 input{
     width: 100%;
     display: flex;
     flex-direction: row;
 }
+
 .email{
     margin: 0 .5rem .5rem  0;
     background-color: rgb(31, 69, 120, 0.2);
@@ -130,13 +126,13 @@
     color: rgb(255, 255, 255, 0.8);
 }
 
-/*coluna 3*/
+/* /coluna 3/ */
 
 .coluna_3{
     display: flex;
     flex-direction: column;
-    
 }
+
 .cpf{
     margin: 0 .5rem .5rem  0;
     background-color: rgb(31, 69, 120, 0.2);
@@ -146,6 +142,7 @@
     outline: none;
     color: rgb(255, 255, 255, 0.8);
 }
+
 .rg{
     margin: 0 .5rem .5rem  0;
     background-color: rgb(31, 69, 120, 0.2);
@@ -155,6 +152,7 @@
     outline: none;
     color: rgb(255, 255, 255, 0.8);
 }
+
 .endereco{
     margin: 0 .5rem .5rem  0;
     background-color: rgb(31, 69, 120, 0.2);
@@ -165,18 +163,17 @@
     color: rgb(255, 255, 255, 0.8);
 }
 
-/*datas*/
+
 
 .datas{
     margin: 0 .5rem .5rem  0;
 }
+
 .datas h4{
     font-size: 14px;
     margin: 10px 0px;
     color: rgb(255, 255, 255, 0.8);
 }
-
-
 
 .data{
     width: 100%;
@@ -189,20 +186,16 @@
     border-radius: .8rem;
     margin: 0 .5rem .5rem  0;
     padding: 3%;
-
 }
 
-
-/* Botões  */
+/* Botões */
 
 .botoes{
     display: flex;
     justify-content: center;
     padding: 1rem;
-    
-    
-    
 }
+
 .botoes button{
     color: var(--cor-das-letras);
     border: none;
@@ -216,8 +209,8 @@
     margin-right: 10rem;
     background-color: rgb(166, 0, 3, 0.8);
     color: rgb(255, 255, 255, 0.8);
-    
 }
+
 /* .cancelar:hover{
     box-shadow: 0 3px 33.4px #ffffff;
 } */
@@ -225,8 +218,56 @@
 .salvar{
     background-color: rgb(3, 128, 14, 0.8);
     color: rgb(255, 255, 255, 0.8);
-    
 }
+
 /* .salvar:hover{
     box-shadow: 0 3px 33.4px #ffffff;
 } */
+
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botoes button {
+        width: 100%; 
+        margin-bottom: 10px;
+    }
+
+    .cancelar {
+        margin-right: 0;
+    }
+
+    .foto_perfil {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .coluna_1, .coluna_2, .coluna_3 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nome, .genero, .email, .cpf, .rg, .endereco, .data {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .datas h4 {
+        font-size: 12px;
+        margin: 10px 0px;
+    }
+
+    .data {
+        font-size: 1rem;
+    }
+
+}

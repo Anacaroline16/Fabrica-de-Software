@@ -8,7 +8,7 @@ export default function EdicaoUsuario() {
     return (
         <div>
             <div className={style.alinhar}>
-                <h1 className={style.h1_editar}>EDITAR INFORMAÇÕES</h1>
+                
                 <div className={style.card}>
                     <form className={style.formulario_usuario}   action="#">
                     
