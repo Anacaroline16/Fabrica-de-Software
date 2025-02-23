@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./checklist.module.css";
+import { ChevronRight, CornerUpLeft } from "lucide-react";
 
 const exercicios = [
   { id: 1, nome: "Leg press 45°", series: "4", reps: "12", img: "/images/legpress45.png" },
@@ -22,6 +23,7 @@ const exercicios_02 = [
 
 const Checklist = () => {
   const [checkedItems, setCheckedItems] = useState({});
+  const [showmodal, setShowModal] = useState(false)
 
   const toggleCheck = (id) => {
     setCheckedItems((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -38,7 +40,31 @@ const Checklist = () => {
         height={50}
         alt="check" />
       <h1>CHECKLIST</h1>
-      <button className={styles.funcButton}>*Alteração apenas funcionários</button>
+
+      <div className={styles.consteudocontainer}>
+                <div className={styles.conteudoCentro}>
+                </div>
+                <button className={styles.funcButton} onClick={() => setShowModal(!showmodal)}>*Alteração apenas funcionários</button>
+                {showmodal && (
+                    <div className={styles.modal}>
+                        <div className={styles.containerModal}>
+                            <button onClick={() => setShowModal(!showmodal)} className={styles.botaoFechar}><CornerUpLeft /></button>
+                            <p>
+                                VOCÊ PRECISA SER UM FUNCIONÁRIO AUTORIZADO PARA REALIZAR UMA ALTERAÇÃO. POR FAVOR INSIRA SUAS CREDENCIAIS.
+                            </p>
+                            <form>
+                                <div className={styles.containerInputs}>
+                                    <input type="email" placeholder="Email:" />
+                                    <input type="password" placeholder="Senha:" />
+                                </div>
+                                <button type="submit" className={styles.botaoenviar}>Acessar <ChevronRight /></button>
+                            </form>
+                        </div>
+                    </div>
+                )
+
+                }
+            </div>
 
       <div className={styles.fundo_checkList}>
         <ul className={styles.checklist}>
