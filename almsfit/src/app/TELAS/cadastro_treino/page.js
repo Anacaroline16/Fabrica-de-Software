@@ -4,14 +4,21 @@ import React from "react";
 import Select from "react-select";
 import style from "./cadastroTreinos.module.css";
 import Image from "next/image";
+import  Link from "next/link";
 import { useState } from "react";
 
 export default function CadastrarTreinos() {
+    const [modalAberto, setModalAberto] = useState(false);
+
+    const abrirModal = () => setModalAberto(true);
+    const fecharModal = () => setModalAberto(false);
+
     const customStyles = {
         control: (provided) => ({
           ...provided,
-          backgroundColor: "darkred", 
+          backgroundColor: "rgba(31,69,120, 0.2)", 
           borderColor:"darkred",
+          
         })
       };
     const exerciciosAcademia = [
@@ -48,35 +55,53 @@ export default function CadastrarTreinos() {
 
         return(
             
-        <div className = { style.container } >
-            <div className={style.card}>
+            <div className = { style.container } >
+                <div className={style.card}>
 
-                <form className={style.formulario_conteudo} action="#">
-                    <div className={style.separar_colunas}>
-                        <div className={style.coluna}>
-                            <input type="text" name="nome" className={style.input} required placeholder="NOME DO ALUNO:" />
-                            <input type="number" name="idEquipamento" className={style.input} placeholder="CÓDIGO DO EQUIPAMENTO:" required />
+                    <form className={style.formulario_conteudo} action="#">
+                        <div className={style.separar_colunas}>
+                            <div className={style.coluna}>
+                                <input type="text" name="nome" className={style.input} required placeholder="NOME DO ALUNO:" />
+                                <input type="number" name="idEquipamento" className={style.input} placeholder="CÓDIGO DO EQUIPAMENTO:" required />
+                            </div>
+
+                            <div className={style.coluna}>
+                                <Select isMulti isSearchable={true} closeMenuOnSelect={true} className={style.select} options={funcionarios} styles={customStyles} placeholder="Funcionário:"></Select>
+
+
+                                <Select isMulti isSearchable={true} closeMenuOnSelect={true} className={style.select} options={exerciciosAcademia}  styles={customStyles} placeholder="Exercícios:"></Select>
+                            </div>
+                        </div>
+                        <div className={style.linha_3}>
+                            <Select isMulti isSearchable={true} closeMenuOnSelect={true} className={style.selectSeries} options={seriesExercicios}   styles={customStyles}placeholder="Quantidade de Séries:    "></Select>
                         </div>
 
-                        <div className={style.coluna}>
-                            <Select isMulti isSearchable={true} closeMenuOnSelect={true} className={style.select} options={funcionarios} styles={customStyles} placeholder="Funcionário:"></Select>
+                    </form>
 
+                </div>
 
-                            <Select isMulti isSearchable={true} closeMenuOnSelect={true} className={style.select} options={exerciciosAcademia}  styles={customStyles} placeholder="Exercícios:"></Select>
+                <button className={style.botao_enviar} type="button" onClick={abrirModal}>
+                    <h3 className={style.h3_botao}>Cadastrar</h3>
+                    <Image src="/images/telaCadatroTreino(1).png" alt="Ícone de envio" width={20} height={20} />
+                </button>
+
+                {/* Modal */}
+                {modalAberto && (
+                    <div className={style.modalOverlay}>
+                        
+                        <div className={style.modal}>
+                            <Link href="/"><Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={style.setaVoltar}/></Link>
+                            <h2>Cadastro Finalizado!</h2>
+                            <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Seta voltar" className={style.finalizado}/>
+                            
+                            
                         </div>
                     </div>
-                    <div className={style.linha_3}>
-                        <Select isMulti isSearchable={true} closeMenuOnSelect={true} className={style.selectSeries} options={seriesExercicios}   styles={customStyles}placeholder="Quantidade de Séries:    "></Select>
-                    </div>
+                )}
 
-                </form>
 
+                
             </div>
-            <button className={style.botao_enviar} type="submit">
-                <h3 className={style.h3_botao}>Cadastrar</h3>
-                <Image src="/images/telaCadatroTreino(1).png" alt="Ícone de envio" width={20} height={20} />
-            </button>
-        </div >
     );
 }
 
