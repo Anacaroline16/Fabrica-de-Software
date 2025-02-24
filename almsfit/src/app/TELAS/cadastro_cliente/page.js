@@ -21,24 +21,24 @@ export default function cadastroCliente(){
                         <Image src="/assets/perfil.png" width="110" height="110" alt="perfil" className={styles.perfil}/>
                     </div>
                     <form className={styles.form} onSubmit={handleSubmit}>
-                        <label className={styles.label}>Nome:</label>
-                        <input type="text" placeholder="Digite seu nome" required/>
+                        <label className={styles.label}></label>
+                        <input type="text" placeholder="Digite seu nome:" required/>
 
-                        <label className={styles.label}>Telefone:</label>
-                        <input type="tel" placeholder="Digite seu telefone" required />
+                        <label className={styles.label}></label>
+                        <input type="tel" placeholder="Digite seu telefone:" required />
 
-                        <label className={styles.label}>Email:</label>
-                        <input type="email" placeholder="Digite seu email" required/>
+                        <label className={styles.label}></label>
+                        <input type="email" placeholder="Digite seu email:" required/>
 
-                        <label className={styles.label}>CPF:</label>
-                        <input type="text" placeholder="Digite seu CPF" required/>
+                        <label className={styles.label}></label>
+                        <input type="text" placeholder="Digite seu CPF:" required/>
 
-                        <label className={styles.label}>Contato para emergência:</label>
-                        <input type="tel" placeholder="Digite um telefone de emergência" required/>
+                        <label className={styles.label}></label>
+                        <input type="tel" placeholder="Digite um telefone de emergência:" required/>
 
-                        <label className={styles.label}>Restrições médicas:</label>
-                        <input type="text" placeholder="Digite suas restrições médicas" required/>
-                        <label className={styles.label}>Data de nascimento:</label>
+                        <label className={styles.label}></label>
+                        <input type="text" placeholder="Digite suas restrições médicas:" required/>
+                        <label className={styles.label}></label>
                         <div className={styles.dateInputs}>
                             <select className={styles.selecao}>
                                 <option>Dia</option>
@@ -62,11 +62,11 @@ export default function cadastroCliente(){
                             </select>
                         </div>
 
-                        <label>Criar senha:</label>
+                        <label></label>
                         <div className={styles.senhaContainer}>
                             <input
                                 type={mostrarSenha ? "text" : "password"}
-                                placeholder="Digite sua senha"
+                                placeholder="Digite sua senha:"
                                 required
                             />
                             <button
@@ -78,11 +78,11 @@ export default function cadastroCliente(){
                             </button>
                         </div>
 
-                        <label>Confirmar senha:</label>
+                        <label></label>
                         <div className={styles.senhaContainer}>
                             <input
                                 type={mostrarConfirmarSenha ? "text" : "password"}
-                                placeholder="Confirme sua senha"
+                                placeholder="Confirme sua senha:"
                                 required
                             />
                             <button

@@ -52,6 +52,10 @@
 .botao_pmrBloco Image{
     padding: 5px;
 }
+.inscrever{
+    text-decoration: none;
+    color: #FFFFFF;
+}
 /*   BLOCO  2*/
 
 .segundo_bloco{

@@ -25,3 +25,13 @@
 .lista1{
   line-height: 1.5;
 }
+.lista1 p{
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+
+}
+
+.lista1 p:hover{
+  border-bottom: 1px solid #FFFFFF;
+  cursor: pointer;
+  color: rgb(145, 6, 6);
+}

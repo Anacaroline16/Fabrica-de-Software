@@ -12,24 +12,26 @@
     all: unset;
     cursor: pointer;
 }
-.botaoAluno:hover{
-    box-shadow: 0px 4px 10px rgb(255, 0, 0);
-    border-radius: 50px;
-}
+
 
 .navLinks{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .links{
     display: flex;
     justify-content: start;
     gap: 10%;
+    
 }
 .link_itens{
-    list-style: none;
+    list-style: none;  
+}
+.link_itens:hover{
+    border-bottom: 1px solid #A10000;
 }
 .link_itens a{
     text-decoration: none;
