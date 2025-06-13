@@ -16,6 +16,7 @@ export default function Contato() {
             20h00. e sábado a domingo, das 10h00 às <br />
             18h00. Estamos ansiosos para ouvir de você!
           </h3>
+          
           <form className={styles.formulario}>
             <label>
               <input className={styles.input_form} type="text" placeholder="Seu nome:" />

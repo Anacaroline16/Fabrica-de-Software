@@ -1,6 +1,6 @@
 import styles from "./page.module.css"
 import Image from "next/image";
-
+import Link from "next/link"
 
 export default function Home() {
 	return (
@@ -13,8 +13,8 @@ export default function Home() {
                         </h1>
                         <p className={styles.paragrafo_principal}>Melhore sua saúde com a academia: fortaleça seu corpo, reduza o estresse e viva de forma mais equilibrada e feliz.</p>
                         <button className={styles.botao_pmrBloco} type="submit" >  
-                                <Image src="/images/figura_botao_1.png" alt="INSCREVA-SE AGORA" width="40" height="40"/> 
-                                INSCREVA-SE AGORA
+                                <Image src="/images/figura_botao_1.png" alt="INSCREVA-SE AGORA" width="30" height="30"/> 
+                                <Link href="/TELAS/cadastro_cliente" className={styles.inscrever}>INSCREVA-SE AGORA</Link> 
                         </button>  
                     </div> 
                     <div className={styles.pmrBloco_coluna2}>
@@ -43,6 +43,7 @@ export default function Home() {
                     <Image className={styles.imgs} src="/images/img3_1.png" alt="Mulher treinando com corda naval ao ar livre" width="450" height="450" /> 
                     <Image className={styles.imgs} src= "/images/img3_2.png" alt="Mulher realizando exercício de pernas em nossa máquina de academia" width="450" height="450" />
                     <Image className={styles.imgs} src="/images/img3_3.png" alt=" Mulher treinando bícps com halteres em academia" width="450" height="450"/>
+                    <Image className={styles.imgs} src="/images/img3_1.png" alt="Mulher treinando com corda naval ao ar livre" width="450" height="450" />
 
                 </div>
             </div>

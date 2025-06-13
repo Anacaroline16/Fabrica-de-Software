@@ -187,7 +187,7 @@ export default function TreinoSemana() {
                                     <input type="email" placeholder="Email:" />
                                     <input type="password" placeholder="Senha:" />
                                 </div>
-                                <button type="submit" className={styles.botaoenviar}>Acessar <ChevronRight /></button>
+                                <Link href="/TELAS/cadastro_treino"><button type="submit" className={styles.botaoenviar}>Acessar <ChevronRight /></button></Link>
                             </form>
                         </div>
                     </div>
