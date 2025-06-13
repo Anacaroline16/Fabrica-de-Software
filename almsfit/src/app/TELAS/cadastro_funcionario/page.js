@@ -69,6 +69,7 @@ export default function CadastrarFuncionario() {
     const [password, setPassword] = useState("");
     const [nome, setNome] = useState("");
     const [formacao, setFormacao] = useState("");
+    // const [formacoesDisponiveis, setFormacoesDisponiveis] = useState([]);
     const [email, setEmail] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -200,6 +201,16 @@ export default function CadastrarFuncionario() {
         setCaixaAberta(true)
     };
 
+    // useEffect(() => {
+    //     fetch("https://almsfitapi.dev.vilhena.ifro.edu.br/api/formacao") 
+    //         .then(res => {
+    //         if (!res.ok) throw new Error(`Erro: ${res.status}`);
+    //         return res.json();
+    //         })
+    //         .then(data => setFormacoesDisponiveis(data))
+    //         .catch(err => console.error("Erro ao buscar formações:", err));
+    //     }, []);
+
     return (
         <div className={styles.containerFormulario} style={{ overflow: caixaAberta ? "hidden" : "auto" }}>
             <div className={styles.campoSuperior}>
@@ -231,6 +242,14 @@ export default function CadastrarFuncionario() {
                         <div className={styles.inputPrimeiroCampo}>
                             <label>Formação:</label>
                             <input type="text" onChange={(e) => { setFormacao(e.target.value) }} required />
+                            {/* <select onChange={(e) => setFormacao(e.target.value)} required>
+                                <option value="">Selecione uma formação</option>
+                                {formacoesDisponiveis.map((item) => (
+                                    <option key={item.idformacao} value={item.formacao}>
+                                    {item.formacao}
+                                    </option>
+                                ))}
+                            </select> */}
                         </div>
                     </div>
                     <div className={styles.campoDropDownNascimento}>
