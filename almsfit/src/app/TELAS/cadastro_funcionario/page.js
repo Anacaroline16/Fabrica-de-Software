@@ -46,7 +46,14 @@ function Dropdown({ label, valorSelecionado, opcoes, aoSelecionar }) {
                     <div className={styles.containerOpcoesDropDown}>
                         <ul className={styles.ulOpcoesDropDown}>
                             {opcoes.map((opcao) => (
-                                <li key={opcao} className={styles.opcoesDropDown} onClick={() => { aoSelecionar(opcao), toggleDropdown }}>
+                                <li
+                                    key={opcao}
+                                    className={styles.opcoesDropDown}
+                                    onClick={() => {
+                                        aoSelecionar(opcao);
+                                        toggleDropdown();
+                                    }}
+                                >
                                     {opcao}
                                 </li>
                             ))}
@@ -73,15 +80,17 @@ export default function CadastrarFuncionario() {
     const [email, setEmail] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [showPasswordConfirmar, setShowPasswordConfrimar] = useState(false);
+    const [showPasswordConfirmar, setShowPasswordConfirmar] = useState(false);
+    const [cep, setCep] = useState("");
+    const [numeroCasa, setNumeroCasa] = useState("");
+    const [complemento, setComplemento] = useState("");
 
     const [caixaAberta, setCaixaAberta] = useState(false);
 
-
     const handletelefoneChange = (e) => {
         let value = e.target.value.replace(/\D/g, "");
-        if (value.length > 2) {
-            value = `+55 (${value.slice(2, 4)}) ${value.slice(4, 9)}${value.length > 9 ? "-" + value.slice(9, 13) : ""}`;
+        if (value.length > 0) {
+            value = `+55 (${value.slice(0, 2)}) ${value.slice(2, 7)}${value.length > 7 ? "-" + value.slice(7, 11) : ""}`;
         }
         setTelefone(value);
     };
@@ -124,8 +133,6 @@ export default function CadastrarFuncionario() {
         setCpfMessage("CPF válido!");
     };
 
-
-
     useEffect(() => {
         const dias = Array.from(
             { length: calcularDiasDoMes(mesSelecionado, anoSelecionado) },
@@ -142,9 +149,7 @@ export default function CadastrarFuncionario() {
         } else {
             document.body.classList.remove("no-scroll");
         }
-
     }, [mesSelecionado, anoSelecionado, caixaAberta]);
-
 
     const isStrongPassword = (pwd) => {
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(pwd);
@@ -153,18 +158,32 @@ export default function CadastrarFuncionario() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        const mesesNumeros = {
+            Janeiro: "01", Fevereiro: "02", Março: "03", Abril: "04",
+            Maio: "05", Junho: "06", Julho: "07", Agosto: "08",
+            Setembro: "09", Outubro: "10", Novembro: "11", Dezembro: "12"
+        };
+
+        const mesNumero = mesesNumeros[mesSelecionado];
+
+        const formData = new FormData();
+        formData.append("nome", nome);
+        formData.append("senha", password);
+        formData.append("cpf", cpf);
+        formData.append("dataDeNascimento", `${anoSelecionado}-${mesNumero}-${String(diaSelecionado).padStart(2, '0')}`);
+        formData.append("email", email);
+        formData.append("telefone", telefone);
+        formData.append("cep", cep);
+        formData.append("numeroCasa", numeroCasa);
+        formData.append("complemento", complemento);
+        formData.append("formacao", formacao);
+
         let dataAtual = new Date();
         let anoAtual = dataAtual.getUTCFullYear();
         let mesAtual = dataAtual.getUTCMonth() + 1;
         let diaAtual = dataAtual.getUTCDate();
 
-        const meses = {
-            "janeiro": 1, "fevereiro": 2, "março": 3, "abril": 4,
-            "maio": 5, "junho": 6, "julho": 7, "agosto": 8,
-            "setembro": 9, "outubro": 10, "novembro": 11, "dezembro": 12
-        };
-
-        let mesRecebido = meses[mesSelecionado.toLowerCase()];
+        let mesRecebido = parseInt(mesNumero);
 
         let anoNascimentoMinimo = anoAtual - 18;
 
@@ -185,32 +204,23 @@ export default function CadastrarFuncionario() {
             return;
         }
 
-
-        const valoresInformado = {
-            nome: nome,
-            telefone: telefone,
-            cpf: cpf,
-            email: email,
-            formacao: formacao,
-            senha: password,
-            dia: diaSelecionado,
-            mes: mesSelecionado,
-            ano: anoSelecionado,
-        };
-
-        setCaixaAberta(true)
-    };
-
-    useEffect(() => {
-        fetch("https://almsfitapi.dev.vilhena.ifro.edu.br/api/docs/")
+        fetch("https://almsfitapi.dev.vilhena.ifro.edu.br/api/funcionarios", {
+            method: "POST",
+            body: formData,
+        })
             .then((res) => {
-            if (!res.ok) throw new Error(`Erro: ${res.status}`);
-            return res.json();
+                if (!res.ok) throw new Error(`Erro: ${res.status}`);
+                return res.json();
             })
             .then((data) => {
-            setFormacoesDisponiveis(data);
+                console.log("Cadastro feito com sucesso:", data);
+                setCaixaAberta(true);
+            })
+            .catch((error) => {
+                console.error("Erro no cadastro:", error);
+                alert("Erro no cadastro. Verifique os dados.");
             });
-    }, []);
+    };
 
     return (
         <div className={styles.containerFormulario} style={{ overflow: caixaAberta ? "hidden" : "auto" }}>
@@ -233,7 +243,7 @@ export default function CadastrarFuncionario() {
                         </div>
                         <div className={styles.inputPrimeiroCampo}>
                             <label>Email:</label>
-                            <input type="email" onChange={(e) => { setEmail(e.target.value) }} required />
+                            <input type="email" onChange={(e) => setEmail(e.target.value)} required />
                         </div>
                         <div className={styles.inputPrimeiroCampo}>
                             <label>CPF:</label>
@@ -242,15 +252,19 @@ export default function CadastrarFuncionario() {
                         {cpfMessage && <p className={styles.mensagemCpf}>{cpfMessage}</p>}
                         <div className={styles.inputPrimeiroCampo}>
                             <label>Formação:</label>
-                            {/* <input type="text" onChange={(e) => { setFormacao(e.target.value) }} required /> */}
-                            <select onChange={(e) => setFormacao(e.target.value)} required>
-                             <option value="">Selecione uma formação</option>
-                                {formacoesDisponiveis.map((item) => (
-                                    <option key={item.idformacao} value={item.formacao}>
-                                    {item.formacao}
-                                    </option>
-                                ))}
-                            </select>
+                            <input type="text" onChange={(e) => setFormacao(e.target.value)} required />
+                        </div>
+                        <div className={styles.inputPrimeiroCampo}>
+                            <label>CEP:</label>
+                            <input type="text" value={cep} onChange={(e) => setCep(e.target.value)} required />
+                        </div>
+                        <div className={styles.inputPrimeiroCampo}>
+                            <label>Número da Casa:</label>
+                            <input type="text" value={numeroCasa} onChange={(e) => setNumeroCasa(e.target.value)} required />
+                        </div>
+                        <div className={styles.inputPrimeiroCampo}>
+                            <label>Complemento:</label>
+                            <input type="text" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
                         </div>
                     </div>
                     <div className={styles.campoDropDownNascimento}>
@@ -295,7 +309,7 @@ export default function CadastrarFuncionario() {
                             />
                             <button
                                 type="button"
-                                onClick={() => setShowPasswordConfrimar(!showPasswordConfirmar)}
+                                onClick={() => setShowPasswordConfirmar(!showPasswordConfirmar)}
                                 className={styles.botaoMostrarSenha}
                             >
                                 {showPasswordConfirmar ? <Eye size={20} /> : <EyeOff size={20} />}
@@ -304,19 +318,21 @@ export default function CadastrarFuncionario() {
                     </div>
                 </div>
 
-                <button type="submit" className={styles.botaoEnviarFormulario}>Cadastrar <ChevronRight size={20} className={styles.setaBotao} /></button>
+                <button type="submit" className={styles.botaoEnviarFormulario}>
+                    Cadastrar <ChevronRight size={20} className={styles.setaBotao} />
+                </button>
             </form>
             {caixaAberta && (
                 <div className={styles.overlay}>
                     <div className={styles.modal}>
-                        <button className={styles.closeButton}>
-                        </button>
-                        <Link href="/"><Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={styles.setaVoltar} onClick={() => setCaixaAberta(false)} /></Link>
+                        <button className={styles.closeButton}></button>
+                        <Link href="/">
+                            <Image src="/assets/seta_voltar.png" width="30" height="30" alt="Seta voltar" className={styles.setaVoltar} onClick={() => setCaixaAberta(false)} />
+                        </Link>
                         <div className={styles.div}>
                             <h2 className={styles.frasebotao}>CADASTRO FINALIZADO!</h2>
                             <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Seta voltar" className={styles.finalizado} />
                         </div>
-
                     </div>
                 </div>
             )}
