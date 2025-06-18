@@ -528,7 +528,7 @@ export default function CadastrarFuncionario() {
         formData.append("certificado", certificado);
         formData.append("fotoPerfil", fotoPerfil);
 
-        // 🔥 Novos campos no FormData
+        
         formData.append("cep", cep);
         formData.append("numeroCasa", numeroCasa);
         formData.append("complemento", complemento);
