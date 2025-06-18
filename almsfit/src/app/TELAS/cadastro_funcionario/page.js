@@ -76,7 +76,7 @@ export default function CadastrarFuncionario() {
     const [password, setPassword] = useState("");
     const [nome, setNome] = useState("");
     const [formacao, setFormacao] = useState("");
-    const [formacoesDisponiveis, setFormacoesDisponiveis] = useState([]);
+    const [certificado, setCertificado] = useState("Não");
     const [email, setEmail] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -177,12 +177,12 @@ export default function CadastrarFuncionario() {
         formData.append("numeroCasa", numeroCasa);
         formData.append("complemento", complemento);
         formData.append("formacao", formacao);
+        formData.append("certificado", certificado === "Sim");
 
         let dataAtual = new Date();
         let anoAtual = dataAtual.getUTCFullYear();
         let mesAtual = dataAtual.getUTCMonth() + 1;
         let diaAtual = dataAtual.getUTCDate();
-
         let mesRecebido = parseInt(mesNumero);
 
         let anoNascimentoMinimo = anoAtual - 18;
@@ -233,40 +233,18 @@ export default function CadastrarFuncionario() {
                         <div className={styles.imagemUsuario}>
                             <Image src={'/images/iconeUsuarioAnonimo.png'} width={150} height={150} alt="IconeUsuarioAnonimo" />
                         </div>
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>Nome:</label>
-                            <input type="text" onChange={(e) => setNome(e.target.value)} required />
-                        </div>
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>Telefone:</label>
-                            <input type="text" value={telefone} onChange={handletelefoneChange} maxLength={19} required />
-                        </div>
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>Email:</label>
-                            <input type="email" onChange={(e) => setEmail(e.target.value)} required />
-                        </div>
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>CPF:</label>
-                            <input type="text" value={cpf} onChange={handleCpfChange} maxLength={14} required />
-                        </div>
+                        <div className={styles.inputPrimeiroCampo}><label>Nome:</label><input type="text" onChange={(e) => setNome(e.target.value)} required /></div>
+                        <div className={styles.inputPrimeiroCampo}><label>Telefone:</label><input type="text" value={telefone} onChange={handletelefoneChange} maxLength={19} required /></div>
+                        <div className={styles.inputPrimeiroCampo}><label>Email:</label><input type="email" onChange={(e) => setEmail(e.target.value)} required /></div>
+                        <div className={styles.inputPrimeiroCampo}><label>CPF:</label><input type="text" value={cpf} onChange={handleCpfChange} maxLength={14} required /></div>
                         {cpfMessage && <p className={styles.mensagemCpf}>{cpfMessage}</p>}
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>Formação:</label>
-                            <input type="text" onChange={(e) => setFormacao(e.target.value)} required />
-                        </div>
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>CEP:</label>
-                            <input type="text" value={cep} onChange={(e) => setCep(e.target.value)} required />
-                        </div>
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>Número da Casa:</label>
-                            <input type="text" value={numeroCasa} onChange={(e) => setNumeroCasa(e.target.value)} required />
-                        </div>
-                        <div className={styles.inputPrimeiroCampo}>
-                            <label>Complemento:</label>
-                            <input type="text" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
-                        </div>
+                        <Dropdown label="Formação" valorSelecionado={formacao} opcoes={["Educação Física", "Fisioterapia", "Personal Trainer", "Nutrição", "Outros"]} aoSelecionar={setFormacao} />
+                        <Dropdown label="Possui Certificado" valorSelecionado={certificado} opcoes={["Sim", "Não"]} aoSelecionar={setCertificado} />
+                        <div className={styles.inputPrimeiroCampo}><label>CEP:</label><input type="text" value={cep} onChange={(e) => setCep(e.target.value)} required /></div>
+                        <div className={styles.inputPrimeiroCampo}><label>Número da Casa:</label><input type="text" value={numeroCasa} onChange={(e) => setNumeroCasa(e.target.value)} required /></div>
+                        <div className={styles.inputPrimeiroCampo}><label>Complemento:</label><input type="text" value={complemento} onChange={(e) => setComplemento(e.target.value)} /></div>
                     </div>
+
                     <div className={styles.campoDropDownNascimento}>
                         <Dropdown label="Dia" valorSelecionado={diaSelecionado} opcoes={diasDisponiveis} aoSelecionar={setDiaSelecionado} />
                         <Dropdown label="Mês" valorSelecionado={mesSelecionado} opcoes={meses.map(m => m.nome)} aoSelecionar={setMesSelecionado} />
@@ -276,19 +254,8 @@ export default function CadastrarFuncionario() {
                     <div className={styles.inputPrimeiroCampoSenha}>
                         <label className={styles.labelCampoSenha}>Criar senha:</label>
                         <div className={styles.containerInputSenha}>
-                            <input
-                                type={showPassword ? "text" : "password"}
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Digite sua senha"
-                                required
-                                className={styles.inputSenha}
-                            />
-                            <button
-                                type="button"
-                                onClick={() => setShowPassword(!showPassword)}
-                                className={styles.botaoMostrarSenha}
-                            >
+                            <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Digite sua senha" required className={styles.inputSenha} />
+                            <button type="button" onClick={() => setShowPassword(!showPassword)} className={styles.botaoMostrarSenha}>
                                 {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
                             </button>
                         </div>
@@ -299,19 +266,8 @@ export default function CadastrarFuncionario() {
                     <div className={styles.inputPrimeiroCampoSenha}>
                         <label className={styles.labelCampoSenha}>Confirmar senha:</label>
                         <div className={styles.containerInputSenha}>
-                            <input
-                                type={showPasswordConfirmar ? "text" : "password"}
-                                value={confirmPassword}
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                                placeholder="Confirme sua senha"
-                                required
-                                className={styles.inputSenha}
-                            />
-                            <button
-                                type="button"
-                                onClick={() => setShowPasswordConfirmar(!showPasswordConfirmar)}
-                                className={styles.botaoMostrarSenha}
-                            >
+                            <input type={showPasswordConfirmar ? "text" : "password"} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirme sua senha" required className={styles.inputSenha} />
+                            <button type="button" onClick={() => setShowPasswordConfirmar(!showPasswordConfirmar)} className={styles.botaoMostrarSenha}>
                                 {showPasswordConfirmar ? <Eye size={20} /> : <EyeOff size={20} />}
                             </button>
                         </div>
@@ -322,6 +278,7 @@ export default function CadastrarFuncionario() {
                     Cadastrar <ChevronRight size={20} className={styles.setaBotao} />
                 </button>
             </form>
+
             {caixaAberta && (
                 <div className={styles.overlay}>
                     <div className={styles.modal}>
@@ -331,7 +288,7 @@ export default function CadastrarFuncionario() {
                         </Link>
                         <div className={styles.div}>
                             <h2 className={styles.frasebotao}>CADASTRO FINALIZADO!</h2>
-                            <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Seta voltar" className={styles.finalizado} />
+                            <Image src="/assets/cadastroFinalizado.png" width="60" height="60" alt="Cadastro finalizado" className={styles.finalizado} />
                         </div>
                     </div>
                 </div>
