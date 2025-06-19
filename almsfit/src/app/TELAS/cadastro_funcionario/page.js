@@ -76,6 +76,9 @@ export default function CadastrarFuncionario() {
     const [password, setPassword] = useState("");
     const [nome, setNome] = useState("");
     const [formacao, setFormacao] = useState("");
+    const [formacoes, setFormacoes] = useState([]);
+    const [formacoesDisponiveis, setFormacoesDisponiveis] = useState([]);
+    const [formacaoInfo, setFormacaoInfo] = useState(null);
     const [certificado, setCertificado] = useState("Não");
     const [email, setEmail] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -247,6 +250,26 @@ export default function CadastrarFuncionario() {
             });
     };
 
+            useEffect(() => {
+                const BASE_URL = window.location.hostname === "localhost"
+                    ? "http://localhost:9000"
+                    : "https://almsfitapi.dev.vilhena.ifro.edu.br/api";
+
+                const buscarTodasFormacoes = async () => {
+                    try {
+                        const resposta = await fetch(`${BASE_URL}/formacao`);
+                        if (!resposta.ok) throw new Error(`Erro: ${resposta.status}`);
+                        const dados = await resposta.json();
+                        setFormacoesDisponiveis(dados);
+                    } catch (erro) {
+                        console.error("Erro ao buscar formações:", erro);
+                        alert("Erro ao buscar formações disponíveis.");
+                    }
+                };
+
+                buscarTodasFormacoes();
+            }, []);  const nomesUnicos = [...new Set(formacoesDisponiveis.map(f => f.formacao))];  
+            
     return (
         <div className={styles.containerFormulario} style={{ overflow: caixaAberta ? "hidden" : "auto" }}>
             <div className={styles.campoSuperior}>
@@ -263,7 +286,15 @@ export default function CadastrarFuncionario() {
                         <div className={styles.inputPrimeiroCampo}><label>Email:</label><input type="email" onChange={(e) => setEmail(e.target.value)} required /></div>
                         <div className={styles.inputPrimeiroCampo}><label>CPF:</label><input type="text" value={cpf} onChange={handleCpfChange} maxLength={14} required /></div>
                         {cpfMessage && <p className={styles.mensagemCpf}>{cpfMessage}</p>}
-                        <Dropdown label="Formação" valorSelecionado={formacao} opcoes={["Educação Física", "Fisioterapia", "Personal Trainer", "Nutrição", "Outros"]} aoSelecionar={setFormacao} />
+                        
+                        <Dropdown
+                            label="Formação"
+                            valorSelecionado={formacao}
+                            opcoes={nomesUnicos}
+                            aoSelecionar={setFormacao}
+                        />
+
+                        {/* <Dropdown label="Formação" valorSelecionado= "Educação Física" aoSelecionar={setFormacao} /> */}
                         <Dropdown label="Possui Certificado" valorSelecionado={certificado} opcoes={["Sim", "Não"]} aoSelecionar={setCertificado} />
 
                         <div className={styles.inputPrimeiroCampo}>
