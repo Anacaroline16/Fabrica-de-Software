@@ -1,8 +1,11 @@
 'use client'
 import Link from "next/link"
+import { useEffect, useState } from "react";
 import Image from "next/image"
 import styles from "./areaAluno.module.css"
 export default function AreaAluno(){
+    const [frequencias, setFrequencias] = useState([]);
+
     const aluno = {
         nome: "Julia Martins Rodrigues",
         nascimento: "15/03/2000",
@@ -19,9 +22,39 @@ export default function AreaAluno(){
         peso: "60 kg",
         imc: "22,04",
         objetivo: "Ganho de massa muscular",
-        frequencia: "5 dias/semana",
+        // frequencia: "5 dias/semana",
         imagem: "/assets/fotoPerfil.png" 
         };
+
+        useEffect(() => {
+            const buscarFrequencia = async () => {
+                try {
+                    const resposta = await fetch("https://almsfitapi.dev.vilhena.ifro.edu.br/api/frequencia/6");
+                    if (!resposta.ok) throw new Error("Erro ao buscar frequência");
+                    const dados = await resposta.json();
+
+                    // Filtra frequências da semana atual
+                    const hoje = new Date();
+                    const primeiroDia = new Date(hoje);
+                    primeiroDia.setDate(hoje.getDate() - hoje.getDay()); // Domingo
+
+                    const ultimoDia = new Date(hoje);
+                    ultimoDia.setDate(hoje.getDate() + (6 - hoje.getDay())); // Sábado
+
+                    const frequenciasDaSemana = dados.filter((f) => {
+                        const data = new Date(f.data);
+                        return data >= primeiroDia && data <= ultimoDia;
+                    });
+
+                    setFrequencias(frequenciasDaSemana);
+                } catch (erro) {
+                    console.error("Erro ao carregar frequências:", erro);
+                }
+            };
+
+            buscarFrequencia();
+        }, []);
+
     return(
             <div>
                 <div className={styles.container}>
@@ -47,7 +80,19 @@ export default function AreaAluno(){
                             <p><strong>IMC:</strong> <span className={styles.imc}>{aluno.imc}</span></p>
                         </div>
                         <p className={styles.lesao}><strong>Objetivo:</strong> {aluno.objetivo}</p>
-                        <p className={styles.lesao}><strong>Frequência:</strong> {aluno.frequencia}</p>
+                        <div className={styles.lesao}>
+                            <strong>Frequência desta semana:</strong>
+                            {frequencias.length > 0 ? (
+                                <ul>
+                                    {frequencias.map((f, i) => (
+                                        <li key={i}>{new Date(f.data).toLocaleDateString("pt-BR")}</li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p>Sem registros nesta semana.</p>
+                            )}
+                        </div>
+                        {/* <p className={styles.lesao}><strong>Frequência:</strong> {aluno.frequencia}</p> */}
                     </div>
                 </div>
                 <div className={styles.container2}>
