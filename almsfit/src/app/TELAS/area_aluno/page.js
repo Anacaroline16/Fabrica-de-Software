@@ -37,22 +37,7 @@ export default function AreaAluno(){
                     if (!resposta.ok) throw new Error(`Erro: ${resposta.status}`);
                     const dados = await resposta.json();
 
-                    // Filtrar apenas as datas desta semana
-                    const hoje = new Date();
-                    const primeiroDia = new Date(hoje);
-                    primeiroDia.setDate(hoje.getDate() - hoje.getDay()); // Domingo
-                    primeiroDia.setHours(0, 0, 0, 0);
-
-                    const ultimoDia = new Date(hoje);
-                    ultimoDia.setDate(hoje.getDate() + (6 - hoje.getDay())); // Sábado
-                    ultimoDia.setHours(23, 59, 59, 999);
-
-                    const frequenciasDaSemana = dados.filter((f) => {
-                        const data = new Date(f.data);
-                        return data >= primeiroDia && data <= ultimoDia;
-                    });
-
-                    setFrequencias(frequenciasDaSemana);
+                    setFrequencias(dados);
                 } catch (erro) {
                     console.error("Erro ao buscar frequência:", erro);
                     alert("Erro ao buscar frequência da cliente.");
@@ -89,19 +74,29 @@ export default function AreaAluno(){
                         </div>
                         <p className={styles.lesao}><strong>Objetivo:</strong> {aluno.objetivo}</p>
                         <div className={styles.lesao}>
-                            <strong>Frequência desta semana:</strong>
+                            <strong>Frequência registrada:</strong>
                             {frequencias.length > 0 ? (
                                 <ul>
-                                    {frequencias.map((f, i) => (
-                                        <li key={i}>
-                                            {new Date(f.data).toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit" })}
-                                        </li>
-                                    ))}
+                                {frequencias.map((f, i) => {
+                                    const entrada = new Date(f.dataEntrada);
+                                    const saida = new Date(f.dataSaida);
+
+                                    const dia = entrada.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" });
+                                    const horaEntrada = entrada.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+                                    const horaSaida = saida.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+
+                                    return (
+                                    <li key={i}>
+                                        Dia: {dia} — Entrada: {horaEntrada} — Saída: {horaSaida}
+                                    </li>
+                                    );
+                                })}
                                 </ul>
                             ) : (
-                                <p>Sem registros nesta semana.</p>
+                                <p>Sem registros.</p>
                             )}
-                        </div>
+                            </div>
+
 
                         {/* <p className={styles.lesao}><strong>Frequência:</strong> {aluno.frequencia}</p> */}
                     </div>
