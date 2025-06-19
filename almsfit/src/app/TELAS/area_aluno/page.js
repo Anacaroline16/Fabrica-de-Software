@@ -27,19 +27,25 @@ export default function AreaAluno(){
         };
 
         useEffect(() => {
+            const BASE_URL = window.location.hostname === "localhost"
+                ? "http://localhost:9000"
+                : "https://almsfitapi.dev.vilhena.ifro.edu.br/api";
+
             const buscarFrequencia = async () => {
                 try {
-                    const resposta = await fetch("https://almsfitapi.dev.vilhena.ifro.edu.br/api/frequencia/6");
-                    if (!resposta.ok) throw new Error("Erro ao buscar frequência");
+                    const resposta = await fetch(`${BASE_URL}/frequencia/cliente/6`);
+                    if (!resposta.ok) throw new Error(`Erro: ${resposta.status}`);
                     const dados = await resposta.json();
 
-                    // Filtra frequências da semana atual
+                    // Filtrar apenas as datas desta semana
                     const hoje = new Date();
                     const primeiroDia = new Date(hoje);
                     primeiroDia.setDate(hoje.getDate() - hoje.getDay()); // Domingo
+                    primeiroDia.setHours(0, 0, 0, 0);
 
                     const ultimoDia = new Date(hoje);
                     ultimoDia.setDate(hoje.getDate() + (6 - hoje.getDay())); // Sábado
+                    ultimoDia.setHours(23, 59, 59, 999);
 
                     const frequenciasDaSemana = dados.filter((f) => {
                         const data = new Date(f.data);
@@ -48,12 +54,14 @@ export default function AreaAluno(){
 
                     setFrequencias(frequenciasDaSemana);
                 } catch (erro) {
-                    console.error("Erro ao carregar frequências:", erro);
+                    console.error("Erro ao buscar frequência:", erro);
+                    alert("Erro ao buscar frequência da cliente.");
                 }
             };
 
             buscarFrequencia();
         }, []);
+
 
     return(
             <div>
@@ -85,13 +93,16 @@ export default function AreaAluno(){
                             {frequencias.length > 0 ? (
                                 <ul>
                                     {frequencias.map((f, i) => (
-                                        <li key={i}>{new Date(f.data).toLocaleDateString("pt-BR")}</li>
+                                        <li key={i}>
+                                            {new Date(f.data).toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit" })}
+                                        </li>
                                     ))}
                                 </ul>
                             ) : (
                                 <p>Sem registros nesta semana.</p>
                             )}
                         </div>
+
                         {/* <p className={styles.lesao}><strong>Frequência:</strong> {aluno.frequencia}</p> */}
                     </div>
                 </div>
