@@ -85,7 +85,11 @@ export default function CadastrarFuncionario() {
     const [numeroCasa, setNumeroCasa] = useState("");
     const [complemento, setComplemento] = useState("");
 
+    const [fotoPerfil, setFotoPerfil] = useState(null);
+    const [arquivoCertificado, setArquivoCertificado] = useState(null);
+
     const [caixaAberta, setCaixaAberta] = useState(false);
+    const [carregando, setCarregando] = useState(false);
 
     const handletelefoneChange = (e) => {
         let value = e.target.value.replace(/\D/g, "");
@@ -169,7 +173,7 @@ export default function CadastrarFuncionario() {
         const formData = new FormData();
         formData.append("nome", nome);
         formData.append("senha", password);
-        formData.append("cpf", cpf);
+        formData.append("cpf", cpf.replace(/\D/g, ""));
         formData.append("dataDeNascimento", `${anoSelecionado}-${mesNumero}-${String(diaSelecionado).padStart(2, '0')}`);
         formData.append("email", email);
         formData.append("telefone", telefone);
@@ -177,7 +181,24 @@ export default function CadastrarFuncionario() {
         formData.append("numeroCasa", numeroCasa);
         formData.append("complemento", complemento);
         formData.append("formacao", formacao);
-        formData.append("certificado", certificado === "Sim");
+
+        if (fotoPerfil) {
+            formData.append("fotoPerfil", fotoPerfil);
+        }
+        if (arquivoCertificado) {
+            formData.append("certificado", arquivoCertificado);
+         }
+
+        for (const pair of formData.entries()) {
+            console.log(`${pair[0]}:`, pair[1]);
+        }
+        console.log("Foto perfil:", fotoPerfil);
+        console.log("Certificado:", arquivoCertificado);
+
+        if (!formacao) {
+            alert("Selecione a formação!");
+            return;
+        }
 
         let dataAtual = new Date();
         let anoAtual = dataAtual.getUTCFullYear();
@@ -204,7 +225,11 @@ export default function CadastrarFuncionario() {
             return;
         }
 
-        fetch("https://almsfitapi.dev.vilhena.ifro.edu.br/api/funcionarios", {
+        const BASE_URL = window.location.hostname === "localhost"
+            ? "http://localhost:9000"
+            : "https://almsfitapi.dev.vilhena.ifro.edu.br/api";
+
+        fetch(`${BASE_URL}/funcionarios`, {
             method: "POST",
             body: formData,
         })
@@ -240,6 +265,17 @@ export default function CadastrarFuncionario() {
                         {cpfMessage && <p className={styles.mensagemCpf}>{cpfMessage}</p>}
                         <Dropdown label="Formação" valorSelecionado={formacao} opcoes={["Educação Física", "Fisioterapia", "Personal Trainer", "Nutrição", "Outros"]} aoSelecionar={setFormacao} />
                         <Dropdown label="Possui Certificado" valorSelecionado={certificado} opcoes={["Sim", "Não"]} aoSelecionar={setCertificado} />
+
+                        <div className={styles.inputPrimeiroCampo}>
+                            <label>Foto de Perfil:</label>
+                            <input type="file" accept=".jpg,.jpeg,.png" onChange={(e) => setFotoPerfil(e.target.files[0])} />
+                        </div>
+
+                        <div className={styles.inputPrimeiroCampo}>
+                            <label>Certificado (PDF ou imagem):</label>
+                            <input type="file" accept=".pdf,.jpg,.jpeg,.png" onChange={(e) => setArquivoCertificado(e.target.files[0])} />
+                        </div>
+
                         <div className={styles.inputPrimeiroCampo}><label>CEP:</label><input type="text" value={cep} onChange={(e) => setCep(e.target.value)} required /></div>
                         <div className={styles.inputPrimeiroCampo}><label>Número da Casa:</label><input type="text" value={numeroCasa} onChange={(e) => setNumeroCasa(e.target.value)} required /></div>
                         <div className={styles.inputPrimeiroCampo}><label>Complemento:</label><input type="text" value={complemento} onChange={(e) => setComplemento(e.target.value)} /></div>
