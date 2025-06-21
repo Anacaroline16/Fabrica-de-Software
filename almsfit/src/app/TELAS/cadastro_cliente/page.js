@@ -78,7 +78,7 @@ export default function CadastroCliente() {
             <input name="email" type="email" placeholder="Digite seu email:" required />
             <input name="cpf" type="text" placeholder="Digite seu CPF:" required />
             <input name="telefoneDeEmergencia" type="tel" placeholder="Telefone de emergência:" required />
-            <input name="restricoesMedicas" type="text" placeholder="Restrições médicas:" required />
+            <input name="restricoesMedicas" type="text" placeholder="Restrições médicas:"/>
 
             {/* Data de nascimento com selects */}
             <div className={styles.dateInputs}>
