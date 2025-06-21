@@ -40,13 +40,19 @@ export default function CadastroCliente() {
       return;
     }
 
+    // Debug: mostrar o que está sendo enviado
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`);
+    }
+
     try {
       const response = await fetch("http://localhost:9000/cliente", {
         method: "POST",
         body: formData,
-        });
+      });
 
       if (response.ok) {
+        console.log("Cadastro realizado com sucesso.");  // mensagem no console
         setCaixaAberta(true);
         form.reset();
       } else {
@@ -68,15 +74,10 @@ export default function CadastroCliente() {
           <form className={styles.form} onSubmit={handleSubmit}>
 
             <input name="nome" type="text" placeholder="Digite seu nome:" required />
-
             <input name="telefone" type="tel" placeholder="Digite seu telefone:" required />
-
             <input name="email" type="email" placeholder="Digite seu email:" required />
-
             <input name="cpf" type="text" placeholder="Digite seu CPF:" required />
-
-            <input name="telefoneEmergencia" type="tel" placeholder="Telefone de emergência:" required />
-
+            <input name="telefoneDeEmergencia" type="tel" placeholder="Telefone de emergência:" required />
             <input name="restricoesMedicas" type="text" placeholder="Restrições médicas:" required />
 
             {/* Data de nascimento com selects */}
